@@ -1,0 +1,20 @@
+---
+title: "19기"
+description: "2024년부터 활동 중인 19기 단원 명단"
+sidebar: false
+---
+import MemberRoster from '../../../components/MemberRoster.astro';
+
+<MemberRoster teams={[
+  { team: 'Humanoid Team', members: [
+    { name: '김근형', part: 'Computer Vision', github: 'kgh2005' },
+    { name: '구도연', part: 'Hardware Design', github: 'koodoyeon' },
+    { name: '노은강', part: 'Circuit Design', github: 'shdmsrkd' },
+    { name: '이원준', part: 'Humanoid Walking', github: 'WJJJ2004' },
+  ]},
+  { team: 'Intelligence Robot Team', members: [
+    { name: '박기홍', part: 'Circuit Design', github: 'kinesis19' },
+    { name: '최범수', part: 'Computer Vision', github: 'beomsuchoi' },
+    { name: '하재민', part: 'Hardware Design', captain: true, github: 'jammay123' },
+  ]},
+]} />

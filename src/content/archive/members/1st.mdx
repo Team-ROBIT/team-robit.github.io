@@ -1,0 +1,29 @@
+---
+title: "1기"
+description: "2006년 창단 멤버, 1기(1.5기 포함) 단원 명단"
+sidebar: false
+---
+import MemberRoster from '../../../components/MemberRoster.astro';
+
+<MemberRoster teams={[
+  { team: 'Humanoid Team', members: [
+    { name: '표윤석', captain: true, note: '프로필 페이지 있음' },
+    { name: '이선우' },
+    { name: '이국선' },
+    { name: '이동훈' },
+    { name: '박은찬', note: '인터뷰 영상 있음' },
+    { name: '김은혜' },
+  ]},
+  { team: 'Intelligent Robot Team', members: [
+    { name: '이대규' },
+    { name: '박수상' },
+    { name: '정은옥' },
+  ]},
+  { team: 'Battle Robot Team', members: [
+    { name: '신봉구' },
+    { name: '김영석' },
+    { name: '최성열', note: '인터뷰 영상 있음' },
+    { name: '임종욱' },
+    { name: '오재욱' },
+  ]},
+]} />

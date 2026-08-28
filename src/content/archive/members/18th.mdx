@@ -1,0 +1,21 @@
+---
+title: "18기"
+description: "2023년 활동한 18기 단원 명단"
+sidebar: false
+---
+import MemberRoster from '../../../components/MemberRoster.astro';
+
+<MemberRoster teams={[
+  { team: 'Humanoid Team', members: [
+    { name: '신태용', part: 'Computer Vision', github: 'anemoiiaa' },
+    { name: '유현우', part: 'Hardware Design', github: '03YHW' },
+    { name: '장정인', part: 'Circuit Design', github: 'inwjd' },
+    { name: '정유정', part: 'Humanoid Walking', github: 'yujung24' },
+  ]},
+  { team: 'Intelligence Robot Team', members: [
+    { name: '변정욱', part: 'Circuit Design', captain: true, github: 'Jeong042' },
+    { name: '소재웅', part: 'Hardware Design', github: 'jaewwong' },
+    { name: '이선경', part: 'Software Engineer', github: 'lee-sunkyoung' },
+    { name: '홍지현', part: 'Computer Vision', github: 'mkdir-sweetiepie' },
+  ]},
+]} />

@@ -1,0 +1,21 @@
+---
+title: "6기"
+description: "2011년 활동한 6기 단원 명단"
+sidebar: false
+---
+import MemberRoster from '../../../components/MemberRoster.astro';
+
+<MemberRoster teams={[
+  { team: 'Humanoid Team', members: [
+    { name: '박동호' },
+    { name: '김찬규' },
+    { name: '김찬주' },
+  ]},
+  { team: 'Intelligent Robot Team', members: [
+    { name: '라용호', captain: true },
+    { name: '유백운' },
+  ]},
+  { team: 'Battle Robot Team', members: [
+    { name: '김관수', note: '인터뷰 영상 있음' },
+  ]},
+]} />

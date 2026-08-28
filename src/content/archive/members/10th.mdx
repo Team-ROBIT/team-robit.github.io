@@ -1,0 +1,20 @@
+---
+title: "10기"
+description: "2014~2015년 활동한 10기(10.5기 포함) 단원 명단"
+sidebar: false
+---
+import MemberRoster from '../../../components/MemberRoster.astro';
+
+<MemberRoster teams={[
+  { team: 'Humanoid Team', members: [
+    { name: '정민구' },
+    { name: '권용혜' },
+    { name: '박효종' },
+    { name: '이진주' },
+  ]},
+  { team: 'Intelligent Robot Team', members: [
+    { name: '최중온' },
+    { name: '김영준' },
+    { name: '이태엽', captain: true, note: '인터뷰 영상 있음' },
+  ]},
+]} />

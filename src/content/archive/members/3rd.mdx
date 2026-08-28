@@ -1,0 +1,23 @@
+---
+title: "3기"
+description: "2008년 활동한 3기(3.5기 포함) 단원 명단"
+sidebar: false
+---
+import MemberRoster from '../../../components/MemberRoster.astro';
+
+<MemberRoster teams={[
+  { team: 'Humanoid Team', members: [
+    { name: '장동욱' },
+    { name: '남혜선' },
+  ]},
+  { team: 'Intelligent Robot Team', members: [
+    { name: '김영용', captain: true },
+    { name: '최인성' },
+    { name: '김명종' },
+    { name: '박선미' },
+  ]},
+  { team: 'Battle Robot Team', members: [
+    { name: '손민기' },
+    { name: '조준태' },
+  ]},
+]} />

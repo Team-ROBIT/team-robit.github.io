@@ -1,0 +1,58 @@
+---
+// src/components/MemberRoster.astro
+// 기수별 멤버 명단을 팀별 카드 그리드로 보여주는 컴포넌트.
+interface Member {
+    name: string;
+    part?: string; // 예: Software Engineer, Hardware Design
+    captain?: boolean;
+    github?: string;
+    note?: string; // 인터뷰 링크 등 기타 정보
+}
+interface TeamGroup {
+    team: string;
+    members: Member[];
+}
+interface Props {
+    teams: TeamGroup[];
+}
+const { teams } = Astro.props;
+---
+
+<div class="not-prose space-y-10">
+    {teams.map((group) => (
+        <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-3">
+                {group.team} <span class="text-zinc-400 dark:text-zinc-600 font-normal">· {group.members.length}명</span>
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {group.members.map((m) => (
+                    <div class="flex items-center justify-between gap-3 rounded-lg border border-zinc-200 dark:border-zinc-800 px-4 py-3">
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-1.5">
+                                <span class="font-bold truncate">{m.name}</span>
+                                {m.captain && (
+                                    <span title="Captain" class="text-brand dark:text-brand-light shrink-0">★</span>
+                                )}
+                            </div>
+                            {(m.part || m.note) && (
+                                <p class="text-xs text-zinc-500 dark:text-zinc-400 truncate">
+                                    {m.captain ? 'Captain' : m.part}{m.part && m.captain ? '' : ''}{m.note && ` · ${m.note}`}
+                                </p>
+                            )}
+                        </div>
+                        {m.github && (
+                            <a
+                                href={`https://github.com/${m.github}`}
+                                target="_blank"
+                                rel="noopener"
+                                class="shrink-0 text-xs font-semibold text-brand dark:text-brand-light hover:underline"
+                            >
+                                GitHub
+                            </a>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </div>
+    ))}
+</div>

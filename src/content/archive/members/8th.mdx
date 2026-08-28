@@ -1,0 +1,21 @@
+---
+title: "8기"
+description: "2013년 활동한 8기 단원 명단"
+sidebar: false
+---
+import MemberRoster from '../../../components/MemberRoster.astro';
+
+<MemberRoster teams={[
+  { team: 'Humanoid Team', members: [
+    { name: '박소영' },
+    { name: '박정훈' },
+    { name: '정동규' },
+    { name: '조영신' },
+  ]},
+  { team: 'Intelligent Robot Team', members: [
+    { name: '김영대' },
+    { name: '박수한', captain: true, note: '인터뷰 있음' },
+    { name: '박찬호', note: '인터뷰 있음' },
+    { name: '황은솔' },
+  ]},
+]} />

@@ -1,0 +1,19 @@
+---
+title: "15기"
+description: "2020년 활동한 15기 단원 명단"
+sidebar: false
+---
+import MemberRoster from '../../../components/MemberRoster.astro';
+
+<MemberRoster teams={[
+  { team: 'Humanoid Team', members: [
+    { name: '김성준' },
+    { name: '안인균' },
+    { name: '양의정' },
+  ]},
+  { team: 'Intelligent Robot Team', members: [
+    { name: '김혜도', captain: true },
+    { name: '이고은' },
+    { name: '이은수' },
+  ]},
+]} />

@@ -1,0 +1,20 @@
+---
+title: "17기"
+description: "2022년 활동한 17기 단원 명단"
+sidebar: false
+---
+import MemberRoster from '../../../components/MemberRoster.astro';
+
+<MemberRoster teams={[
+  { team: 'Humanoid Team', members: [
+    { name: '김대겸', part: 'Hardware Design', github: 'daekyum02' },
+    { name: '윤소정', part: 'Computer Vision', github: 'yu-nsojeong' },
+    { name: '장승원', part: 'Humanoid Walking', github: 'SeungWon-Jang17' },
+  ]},
+  { team: 'Intelligence Robot Team', members: [
+    { name: '이명진', part: 'Software Engineer', github: 'mjlee111' },
+    { name: '이민석', part: 'Software Engineer', github: 'minseokle' },
+    { name: '이승훈', part: 'Software Engineer', github: 'Leeseunghun03' },
+    { name: '이지행', part: 'Hardware Design', captain: true },
+  ]},
+]} />

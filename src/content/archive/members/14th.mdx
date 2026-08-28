@@ -1,0 +1,21 @@
+---
+title: "14기"
+description: "2019년 활동한 14기 단원 명단"
+sidebar: false
+---
+import MemberRoster from '../../../components/MemberRoster.astro';
+
+<MemberRoster teams={[
+  { team: 'Humanoid Team', members: [
+    { name: '박준수' },
+    { name: '엄일영' },
+    { name: '최성우' },
+    { name: '한도형' },
+  ]},
+  { team: 'Intelligent Robot Team', members: [
+    { name: '김동환' },
+    { name: '김진' },
+    { name: '김현서', captain: true },
+    { name: '유정석' },
+  ]},
+]} />
