@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@theme {
+    /* 로고에서 추출한 브랜드 컬러. blue-600 같은 즉흥 색상 대신 이걸 씁니다. */
+    --color-brand: #7a2233;
+    --color-brand-light: #d97b86;
+    --font-display: "Big Shoulders Display", sans-serif;
+}
+
 @layer base {
     :root {
         --font-pretendard: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;

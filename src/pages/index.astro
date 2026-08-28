@@ -1,53 +1,87 @@
 ---
 // src/pages/index.astro
+import { Image } from 'astro:assets';
 import DocsLayout from '../layouts/DocsLayout.astro';
+import logoCircle from '../assets/robit_logo_kw_circle.png';
+import imgContest from '../assets/assets_contest/contest-robocup-rescue-main.webp';
+import imgRobots from '../assets/assets_contest/robot-robocup-rescue-2024.webp';
+import imgPeople from '../assets/assets_contest/team-src-irc.webp';
+import imgEvents from '../assets/assets_contest/contest-extreme-main.webp';
+import imgArticles from '../assets/assets_contest/contest-ebs-humanoid.webp';
+import imgHistory from '../assets/assets_contest/robot-robocup-humanoid.webp';
+import imgContact from '../assets/assets_contest/team-robocup-rescue.webp';
+
+const cards = [
+	{ title: 'Overview', desc: "팀의 정의, 'RO:BIT' 이름의 의미, 2006년 창단 이후 역사.", href: '/robit-site/overview/welcome', image: logoCircle, contain: true },
+	{ title: 'Contest', desc: '로보컵·SRC IRC 등 국내외 대회 참가 기록과 수상 실적.', href: '/robit-site/contest/participation', image: imgContest },
+	{ title: 'Our Robots', desc: '휴머노이드부터 재난구조 로봇까지, 역대 개발 로봇 제원.', href: '#', image: imgRobots },
+	{ title: 'People', desc: '1기부터 20기까지, 졸업·현역 단원 소개.', href: '/robit-site/members/roster', image: imgPeople },
+	{ title: 'Events', desc: '지역 축제 참여 등 로봇 대중화를 위한 대외 활동 기록.', href: '/robit-site/events/participation', image: imgEvents },
+	{ title: 'Articles', desc: '방송 출연 및 언론 보도 자료 모음.', href: '/robit-site/articles/press', image: imgArticles },
+	{ title: 'History & Archive', desc: '창단 16주년 기념으로 시작된 아카이브 프로젝트 소개.', href: '/robit-site/overview/history', image: imgHistory },
+	{ title: 'Contact', desc: '로빛에 대해 궁금한 점이 있다면 문의해주세요.', href: '#', image: imgContact },
+];
 ---
 
-<DocsLayout title="Welcome to ROːBIT Archive" isDocs={false}>
-	<section class="relative py-16 px-8 mb-16 overflow-hidden rounded-[2rem] bg-gradient-to-br from-zinc-900 via-zinc-800 to-black text-white shadow-2xl">
+<DocsLayout title="Welcome to ROːBIT Archive" isDocs={false} hideHeader={true}>
+	<section class="relative -mx-6 md:-mx-12 mb-14 px-6 md:px-12 py-16 text-center overflow-hidden rounded-b-[2rem] dotgrid">
 		<div class="relative z-10">
-		<h2 class="text-4xl md:text-6xl font-black mb-6 leading-[1.1]">
-			Korea's First, <br/>
-			<span class="text-blue-500">Global Leader in Robotics.</span>
-			<!-- 슬로건은 재민이형이 말해주는 내용으로 수정 필요. 지금은 임의로 추가함.-->
-		</h2>
-		<p class="text-zinc-400 max-w-xl mb-10 text-lg leading-relaxed">
-			광운대학교 로봇게임단 로빛의 20여 년간의 기술 자산과 대회 기록을 체계적으로 보존하는 공식 아카이브입니다.
-		</p>
-		<div class="flex flex-wrap gap-4">
-			<a href="/overview/welcome" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105">
-			시작하기
-			</a>
-			<a href="https://github.com/team-robit" target="_blank" class="bg-zinc-800/50 backdrop-blur-md border border-zinc-700 hover:bg-zinc-700 px-8 py-4 rounded-full font-bold transition-all">
-			GitHub 저장소
-			</a>
-		</div>
+			<h1 class="font-display font-black uppercase tracking-tight text-5xl sm:text-6xl text-zinc-900 dark:text-zinc-50">
+				RO<span class="text-brand dark:text-brand-light">:</span>BIT Archive
+			</h1>
+			<p class="mt-4 text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">
+				2006년 창단, 광운대학교 학생자치기구 국내 최초 로봇 스포츠 게임단. 대회 기록부터 로봇 제원까지, 로빛의 모든 자료를 한곳에서.
+			</p>
 		</div>
 	</section>
 
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-		<a href="/robots/robot-list" class="group p-8 border border-zinc-200 dark:border-zinc-800 rounded-3xl hover:border-blue-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all">
-		<div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">🤖</div>
-		<h3 class="font-bold text-xl mb-3">Our Robots</h3>
-		<p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
-			로빛의 역대 레스큐, 재난 대응 로봇들의 사양과 설계 문서를 확인하세요.
-		</p>
-		</a>
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+		{cards.map((card) => (
+			<a href={card.href} class="group rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden hover:border-brand dark:hover:border-brand-light transition-colors">
+				<div class={`aspect-4/3 overflow-hidden flex items-center justify-center ${card.contain ? 'bg-brand/10 dark:bg-brand-light/10' : 'bg-zinc-100 dark:bg-zinc-800'}`}>
+					<Image
+						src={card.image}
+						alt={card.title}
+						class={card.contain ? 'w-1/2 h-1/2 object-contain' : 'w-full h-full object-cover'}
+					/>
+				</div>
+				<div class="p-5">
+					<h3 class="font-bold text-lg mb-2">{card.title}</h3>
+					<p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed mb-3">{card.desc}</p>
+					<span class="text-sm font-bold text-brand dark:text-brand-light">
+						{card.href === '#' ? '준비 중' : '둘러보기 →'}
+					</span>
+				</div>
+			</a>
+		))}
+	</div>
 
-		<a href="/contest/awards" class="group p-8 border border-zinc-200 dark:border-zinc-800 rounded-3xl hover:border-orange-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all">
-		<div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">🏆</div>
-		<h3 class="font-bold text-xl mb-3">Achievements</h3>
-		<p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
-			국내외 로봇 대회 수상 실적과 주요 경기 리포트를 열람할 수 있습니다.
-		</p>
+	<div class="mt-16 flex flex-wrap justify-center gap-3">
+		<a href="https://github.com/team-robit" target="_blank" class="flex items-center gap-2 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-2 text-sm font-semibold hover:border-brand dark:hover:border-brand-light transition-colors">
+			GitHub
 		</a>
-
-		<a href="/members/current" class="group p-8 border border-zinc-200 dark:border-zinc-800 rounded-3xl hover:border-emerald-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all">
-		<div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">👥</div>
-		<h3 class="font-bold text-xl mb-3">People</h3>
-		<p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
-			로빛을 빛낸 역대 단원들과 현재 활동 중인 19, 20기 지능팀 정보를 확인하세요.
-		</p>
+		<a href="https://www.kw.ac.kr" target="_blank" class="flex items-center gap-2 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-2 text-sm font-semibold hover:border-brand dark:hover:border-brand-light transition-colors">
+			광운대학교
 		</a>
 	</div>
 </DocsLayout>
+
+<style>
+	.dotgrid {
+		background-image: radial-gradient(circle, color-mix(in srgb, currentColor 14%, transparent) 1px, transparent 1px);
+		background-size: 22px 22px;
+		color: var(--color-zinc-400);
+	}
+	.dotgrid::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(circle at 50% 10%, color-mix(in srgb, var(--color-brand) 16%, transparent), transparent 62%);
+		pointer-events: none;
+	}
+	@media (prefers-color-scheme: dark) {
+		.dotgrid {
+			color: var(--color-zinc-700);
+		}
+	}
+</style>
