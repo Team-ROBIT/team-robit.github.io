@@ -6,9 +6,42 @@ order: 1
 
 # 📰 언론 보도
 
-로빛의 활동은 창단 초기부터 여러 매체에 소개되어 왔습니다. 아래는 원본 아카이브(구글 사이트)에 있던 기사 스크랩 목록을 우선 텍스트로 옮긴 것이며, 실제 PDF 스캔본·기사 링크·사진은 순차적으로 추가될 예정입니다.
+로빛의 활동은 창단 초기부터 여러 매체에 소개되어 왔습니다. 2024년 이전 목록은 원본 아카이브(구글 사이트)에 있던 기사 스크랩을 우선 텍스트로 옮긴 것이며, 실제 PDF 스캔본·기사 링크·사진은 순차적으로 추가될 예정입니다. 2025년 이후 기사는 제목을 누르면 원문으로 이동합니다.
 
 <details open>
+<summary><b>2025 ~ 2026</b></summary>
+
+| 제목 | 매체 |
+| :--- | :--- |
+| [광운대 로빛, 국방로봇경진대회 2연패…산업통상부장관상 수상](https://www.mt.co.kr/policy/2026/09/10/2026091013470379693) | 머니투데이 |
+| [험지 누비고 자율 협동까지… 광운대 '로빛', 국방로봇대회 역대 최고점으로 2연패](https://www.fnnews.com/news/202609101348359971) | 파이낸셜뉴스 |
+| [광운대 로봇게임단, '2026 육군참모총장배 국방로봇경진대회' 우승](https://www.seoul.co.kr/news/society/2026/09/10/20260910500048) | 서울신문 |
+| [광운대 로빛, 2026 육군참모총장배 국방로봇대회 산업통상부장관상…'이클립스'로 원·자율 부문 만점 1위](https://www.kyosu.net/news/articleView.html?idxno=210070) | 교수신문 |
+| [광운대 '로빛', 국방로봇경진대회 1위, 전 구간 만점 '역대 최고점'](http://www.enewstoday.co.kr/news/articleView.html?idxno=2468968) | 이뉴스투데이 |
+| [광운대 로봇게임단 '로빛' 국방로봇경진대회 2연패.. '산업통상부장관상 수상'](https://www.veritas-a.com/news/articleView.html?idxno=627110) | 베리타스알파 |
+| [광운대 로빛(RO:BIT), 육군참모총장배 국방로봇경진대회 2연패](https://www.newsfreezone.co.kr/news/articleView.html?idxno=708567) | 뉴스프리존 |
+| [광운대 로빛, 로보컵 2026 휴머노이드 축구리그 참가…엑스와이지 기술 지원](https://www.irobotnews.com/news/articleView.html?idxno=47231) | 로봇신문 |
+| [광운대 로빛, 로보컵 2026 휴머노이드 축구 리그 참가](https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=03198006645510912) | 이데일리 |
+| [광운대 로봇게임단 로빛, 휴머노이드 축구 세계무대서 '키즈 사이즈 챔피언' 등극](http://www.newsroad.co.kr/news/articleView.html?idxno=54589) | 뉴스로드 |
+| [광운대 로봇게임단 로빛(RO:BIT), '한국로보컵오픈 2026' 우승](https://www.joongangenews.com/news/articleView.html?idxno=496081) | 중앙이코노미뉴스 |
+| [광운대 로봇게임단 로빛(RO:BIT), '한국로보컵오픈 2026' 우승](https://www.m-i.kr/news/articleView.html?idxno=1337580) | 매일일보 |
+| [광운대 학생 개발한 로봇, '한국로보컵오픈 2026' 우승](https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=04664166645350192) | 이데일리 |
+| ['더 퍼스트, 더 베스트' 광운대 로봇게임단 '로빛' … 2025 극한로봇 경진대회서 대상 차지](https://biz.newdaily.co.kr/site/data/html/2025/10/21/2025102100254.html) | 뉴데일리 |
+| [광운대 로봇게임단 로빛(RO:BIT), '2025 극한로봇 경진대회'에서 최고 영예 '대상' 수상](https://www.kyosu.net/news/articleView.html?idxno=146696) | 교수신문 |
+| [광운대 로봇게임단 로빛(RO:BIT), '2025 극한로봇 경진대회'에서 최고 영예 '대상' 수상](https://www.joongangenews.com/news/articleView.html?idxno=458406) | 중앙이코노미뉴스 |
+| [광운대학교 로봇게임단 로빛(RO:BIT), '2025 극한로봇 경진대회'에서 최고 영예 '대상' 수상](http://www.m-i.kr/news/articleView.html?idxno=1293684) | 매일일보 |
+| [광운대 '로빛', 처음 열린 극한로봇경진대회서 대상](https://www.newsfreezone.co.kr/news/articleView.html?idxno=652881) | 뉴스프리존 |
+| [광운대 학생들, 로봇경진대회서 대상 수상](https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=03876966642335216) | 이데일리 |
+| ['로봇대회 우승 제조기' 로빛..."노하우 축적과 열정 덕분"](https://www.inews24.com/view/1821066) | 아이뉴스24 |
+| [광운대 로봇게임단 로빛, '한국로보컵오픈 2025 우승'](https://m.etnews.com/20250219000385) | 전자신문 |
+| [광운대 로봇게임단 로빛(RO:BIT), 한국로보컵오픈 2025 우승](https://news.unn.net/news/articleView.html?idxno=575199) | 한국대학신문 |
+| [광운대학교 로봇게임단 로빛(RO:BIT), '한국로보컵오픈 2025 우승'](http://www.kyosu.net/news/articleView.html?idxno=131169) | 교수신문 |
+| [광운대 RO:BIT, '한국로보컵오픈 2025 우승'](https://www.newsfreezone.co.kr/news/articleView.html?idxno=609869) | 뉴스프리존 |
+| [광운대 학생들, 국제 로봇 경진대회 우승](https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=04329606642072160) | 이데일리 |
+
+</details>
+
+<details>
 <summary><b>2023 ~ 2024</b></summary>
 
 | 제목 | 매체 |
