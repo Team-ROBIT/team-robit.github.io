@@ -24,7 +24,7 @@ const menuItems = groups.map(group => {
         .sort((a, b) => (a.data.order || 0) - (b.data.order || 0)) 
         .map(doc => ({
             name: doc.data.title,
-            href: `/robit-site/${doc.slug}`
+            href: `/${doc.slug}`
         }));
 
     return {
