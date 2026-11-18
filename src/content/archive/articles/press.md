@@ -6,7 +6,7 @@ order: 1
 
 # 📰 언론 보도
 
-로빛의 활동은 창단 초기부터 여러 매체에 소개되어 왔습니다. 2024년 이전 목록은 원본 아카이브(구글 사이트)에 있던 기사 스크랩을 우선 텍스트로 옮긴 것이며, 실제 PDF 스캔본·기사 링크·사진은 순차적으로 추가될 예정입니다. 2025년 이후 기사는 제목을 누르면 원문으로 이동합니다.
+로빛의 활동은 창단 초기부터 여러 매체에 소개되어 왔습니다. 2024년 이전 목록은 원본 아카이브(구글 사이트)에 있던 기사 스크랩을 텍스트로 옮긴 것이고, 기사 스캔 PDF 원본은 맨 아래 "원본 기사 스캔" 항목에서 볼 수 있습니다. 2025년 이후 기사는 제목을 누르면 원문으로 이동합니다.
 
 <details open>
 <summary><b>2025 ~ 2026</b></summary>
@@ -147,8 +147,119 @@ order: 1
 </details>
 
 <details>
-<summary><b>2006, 2010~2017 — 아직 미이전</b></summary>
+<summary><b>원본 기사 스캔 (PDF) — 2006~2024</b></summary>
 
-원본 사이트에 PDF 스캔만 남아있고 텍스트가 추출되지 않아 우선 비워둡니다. 원본 파일(로봇신문사.pdf 등)을 찾으면 채워 넣어야 합니다.
+원본 아카이브(구글 사이트)에 보관되어 있던 기사 스캔 파일입니다. 제목을 누르면 PDF가 열립니다.
+
+### 2006
+
+- [\[나눔의 IT문화 이제는 학교다\](24)미래 유망학과-로봇 - 전자신문](/archive/articles/2006-01.pdf)
+
+### 2007
+
+- [20070522_inews24.com_view_printxx_263167](/archive/articles/2007-01.pdf)
+- [20071022_네이버 뉴스](/archive/articles/2007-02.pdf)
+- [20070111_디지털시대 경제신문 디지털타임스](/archive/articles/2007-03.pdf)
+- [20070601_네이버 뉴스](/archive/articles/2007-04.pdf)
+- [20070531_부산기계대전 ‘亞 로보원 대회’ 인기](/archive/articles/2007-05.pdf)
+
+### 2008
+
+- [20080107네이버 뉴스](/archive/articles/2008-01.pdf)
+- [20080201_카메라뉴스](/archive/articles/2008-02.pdf)
+- [20080201_네이버 뉴스](/archive/articles/2008-03.pdf)
+- [20080201인쇄 _ 네이버 뉴스](/archive/articles/2008-04.pdf)
+- [20080201인쇄_네이버 뉴스](/archive/articles/2008-05.pdf)
+- [20080506_inews24_수퍼로봇그랑프리_우승](/archive/articles/2008-06.pdf)
+- [20080610_inews24_세계대회출전](/archive/articles/2008-07.pdf)
+- [20080610_파이낸셜뉴스_세계대회출전](/archive/articles/2008-08.pdf)
+- [20080619_inews_종합2위](/archive/articles/2008-09.pdf)
+- [20080619_뉴시스_금메달6개](/archive/articles/2008-10.pdf)
+- [20080619_연합뉴스_금메달](/archive/articles/2008-11.pdf)
+- [20080619_한국로봇팀, 세계 최대 로봇대회에서 종합 2위 - 전자신문](/archive/articles/2008-12.pdf)
+- [20080623_뉴시스_종합2위](/archive/articles/2008-13.pdf)
+- [20080730_inews24_제2회_청소년로봇캠프](/archive/articles/2008-14.pdf)
+- [20080731_광운대,‘제 2회 청소년 로봇 캠프’개최 - 전자신문](/archive/articles/2008-15.pdf)
+- [20080619_연합뉴스_금메달2](/archive/articles/2008-16.pdf)
+- [20080814_뉴시스_2](/archive/articles/2008-17.pdf)
+- [20080814_뉴시스_3](/archive/articles/2008-18.pdf)
+- [20080814_뉴시스](/archive/articles/2008-19.pdf)
+- [20081020_inews24_로보월드_대통령상](/archive/articles/2008-20.pdf)
+- [20081126_세상을 보는 눈, 글로벌 미디어 - 세계일보 -](/archive/articles/2008-21.pdf)
+
+### 2009
+
+- [20090122_\[미래학과 탐방\] 광운대 정보제어공학과 - 전자신문](/archive/articles/2009-01.pdf)
+- [20090222_소녀시대 “로봇과 함께 춤을~” ‘GEE’ 합동공연 눈길 - 손에 잡히는 뉴스 눈에 보이는 뉴스 - 뉴스엔](/archive/articles/2009-02.pdf)
+- [20090223_소녀시대 “대학생이 만든 로봇과 함께 ‘GEE’ 춤을~” - 손에 잡히는 뉴스 눈에 보이는 뉴스 - 뉴스엔](/archive/articles/2009-03.pdf)
+- [20090505_inews24_로보원우승](/archive/articles/2009-04.pdf)
+- [20090506_연합뉴스_로보원우승](/archive/articles/2009-05.pdf)
+- [20090506_뉴시스_일본제패](/archive/articles/2009-06.pdf)
+- [20090506_파이낸셜뉴스_일본대회](/archive/articles/2009-07.pdf)
+- [20090506_쿠키뉴스 - 정치, 경제, 사회, 건강, 의학, 연예, 스포츠 등 정보 제공_](/archive/articles/2009-08.pdf)
+- [20090506_광운대 ‘로빛’ 日 로봇 대회 우승-국민일보](/archive/articles/2009-09.pdf)
+- [20090506_디지털시대_경제신문_디지털타임스_로보원ㅇ](/archive/articles/2009-10.pdf)
+- [20090507_내일신문_세계대회우승](/archive/articles/2009-11.pdf)
+- [20090507_광운대 로봇게임단, 일본 로봇대회 우승 - 전자신문](/archive/articles/2009-12.pdf)
+- [20090507_광운대 로봇 게임단 일본 대회서 우승 _ 한경닷컴](/archive/articles/2009-13.pdf)
+- [20090522_광운대 `로봇대학` 프로젝트　 - 매일경제](/archive/articles/2009-14.pdf)
+- [20090714_파이낸셜뉴스_청소년로봇캠프](/archive/articles/2009-15.pdf)
+- [20090714_디지털시대 경제신문 디지털타임스](/archive/articles/2009-16.pdf)
+- [20090722인쇄 _ 네이버 뉴스](/archive/articles/2009-17.pdf)
+- [20090908_연합뉴스_국제로봇컨테스트_대통령상](/archive/articles/2009-18.pdf)
+- [20090907_디지털시대 경제신문 디지털타임스](/archive/articles/2009-19.pdf)
+- [20090908_파이낸셜뉴스_국제로봇컨테스트_우승](/archive/articles/2009-20.pdf)
+- [20090908_연합뉴스_로봇콘테스트_우승](/archive/articles/2009-21.pdf)
+- [20090907_연합뉴스_청소년_로봇게임대회](/archive/articles/2009-22.pdf)
+- [20090908_디지털시대 경제신문 디지털타임스](/archive/articles/2009-23.pdf)
+- [20090908_inews24_국제로봇컨테스트_대통령상](/archive/articles/2009-24.pdf)
+- [20090908_뉴시스_대통령상](/archive/articles/2009-25.pdf)
+- [20090908_뉴시스_대통령상_2](/archive/articles/2009-26.pdf)
+
+### 2009-2010
+
+- [연합뉴스2009](/archive/articles/2009-2010-01.pdf)
+
+### 2011-2012
+
+- [2011](/archive/articles/2011-2012-01.pdf)
+- [인쇄하기](/archive/articles/2011-2012-02.pdf)
+
+### 2013-2014
+
+- [인쇄하기](/archive/articles/2011-2012-02.pdf)
+
+### 2015-2016
+
+- [_광운대 로빛과 함께 하는 청소년로봇캠프_](/archive/articles/2015-2016-01.pdf)
+
+### 2017-2018
+
+- [광운대 로봇게임단 로빛, 세계 ‘로보컵 2018’ 3위 _ 중앙일보](/archive/articles/2017-2018-01.pdf)
+- [광운대 로봇게임단 로빛, 2018 대구국제로봇산업전 R-BIZ Challenge turtlebot3 autorace 부문 1위 수상 _ 중앙일보](/archive/articles/2017-2018-02.pdf)
+
+### 2019-2020
+
+- [광운대 로빛, 2020년 3개 로봇대회에서 7개 부문 수상 쾌거 - Life & Learning - 라이프&러닝 _ lifenlearning _ 배움 & 채움](/archive/articles/2019-2020-01.pdf)
+
+### 2021-2022
+
+- [로봇신문사](/archive/articles/2021-2022-01.pdf)
+
+### 2023-2024
+
+- [1_로봇신문사](/archive/articles/2023-2024-01.pdf)
+- [2_전자신문_코로나 엔데믹, 국제대회 참가 준비하는 대학생](/archive/articles/2023-2024-02.pdf)
+- [3_서울 국제 로봇 콘테스트 SRC IRC](/archive/articles/2023-2024-03.pdf)
+- [4_광운대, 서울 국제 로봇 콘테스트 SRC IRC 수상](/archive/articles/2023-2024-04.pdf)
+- [5_로봇신문사_RCAP](/archive/articles/2023-2024-05.pdf)
+- [6_광운대 로봇게임단, 로보컵아시아퍼시픽2023 우승](/archive/articles/2023-2024-06.pdf)
+- [7_ZDNet korea](/archive/articles/2023-2024-07.pdf)
+- [8_아시아투데이](/archive/articles/2023-2024-08.pdf)
+- [9_전시회](/archive/articles/2023-2024-09.pdf)
+- [10_뉴데일리_로보컵출전](/archive/articles/2023-2024-10.pdf)
+- [11_중국 참가팀 상대로 득점하는 로빛 휴머노이드 - 전자신문](/archive/articles/2023-2024-11.pdf)
+- [12_광운대 로빛, '로보컵 2024' 로보컵 휴머노이드 축구 키드사이즈 부문 '2위' - 전자신문](/archive/articles/2023-2024-12.pdf)
+- [13_광운대 ‘로빛’ 국방로봇경진대회 ‘한화국방로봇상’](/archive/articles/2023-2024-13.pdf)
 
 </details>

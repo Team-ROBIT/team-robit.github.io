@@ -8,16 +8,20 @@ import heroImg from '../../../assets/assets_contest/team-robocup-rescue.webp';
 import robotImg1 from '../../../assets/assets_contest/robot-robocup-rescue-2021.webp';
 import robotImg2 from '../../../assets/assets_contest/robot-robocup-rescue-2022.webp';
 import robotImg3 from '../../../assets/assets_contest/robot-robocup-rescue-2024.webp';
-import techGif1 from '../../../assets/assets_contest/contest-robocup-rescue-tech-1.gif';
-import techGif2 from '../../../assets/assets_contest/contest-robocup-rescue-tech-2.gif';
-import techGif3 from '../../../assets/assets_contest/contest-robocup-rescue-tech-3.gif';
-import techGif4 from '../../../assets/assets_contest/contest-robocup-rescue-tech-4.gif';
-import techGif5 from '../../../assets/assets_contest/contest-robocup-rescue-tech-5.gif';
-import techGif6 from '../../../assets/assets_contest/contest-robocup-rescue-tech-6.gif';
-import techGif7 from '../../../assets/assets_contest/contest-robocup-rescue-tech-7.gif';
-import techGif8 from '../../../assets/assets_contest/contest-robocup-rescue-tech-8.gif';
-import techGif9 from '../../../assets/assets_contest/contest-robocup-rescue-tech-9.gif';
-import techGif10 from '../../../assets/assets_contest/contest-robocup-rescue-tech-10.gif';
+
+import rt4 from '../../../assets/assets_contest/rescue-tech-004.webp';
+import rt5 from '../../../assets/assets_contest/rescue-tech-005.webp';
+import rt6 from '../../../assets/assets_contest/rescue-tech-006.webp';
+import rt7 from '../../../assets/assets_contest/rescue-tech-007.webp';
+import rt8 from '../../../assets/assets_contest/rescue-tech-008.webp';
+import rt9 from '../../../assets/assets_contest/rescue-tech-009.webp';
+import rt10 from '../../../assets/assets_contest/rescue-tech-010.webp';
+import rt11 from '../../../assets/assets_contest/rescue-tech-011.webp';
+import rt12 from '../../../assets/assets_contest/rescue-tech-012.webp';
+import rt13 from '../../../assets/assets_contest/rescue-tech-013.webp';
+import rt14 from '../../../assets/assets_contest/rescue-tech-014.webp';
+import rt15 from '../../../assets/assets_contest/rescue-tech-015.webp';
+import rt16 from '../../../assets/assets_contest/rescue-tech-016.webp';
 
 <ContestDetailLayout title="Robocup Rescue" heroImage={heroImg}>
 
@@ -69,113 +73,35 @@ RoboCup Rescue는 재난 환경에서 수색과 구조 임무를 수행할 수 �
 ## 💻 Technology
 4개의 플리퍼를 사용하여 계단 뿐만 아니라 다양한 지형을 돌파할 수 있습니다.
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-    {/* 왼쪽: 미션 수행 GIF */}
-    <div class="flex flex-col items-center">
-        <img src={techGif1.src} class="rounded-xl shadow-lg !m-0 w-full object-cover" alt="기술 미션" />
-        <p class="text-xs text-zinc-500 mt-3 italic">〈2021 로봇 기술〉</p>
-    </div>
-    
-    {/* 왼쪽: 미션 수행 GIF */}
-    <div class="flex flex-col items-center">
-        <img src={techGif2.src} class="rounded-xl shadow-lg !m-0 w-full object-cover" alt="기술 미션" />
-        <p class="text-xs text-zinc-500 mt-3 italic">〈20xx 로봇 기술〉</p>
-    </div>
-    
-    <div class="flex flex-col items-center">
-        <img src={techGif3.src} class="rounded-xl shadow-lg !m-0 w-full object-cover" alt="기술 미션" />
-        <p class="text-xs text-zinc-500 mt-3 italic">〈Qualifications〉</p>
-    </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+    <img src={rt4.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
+    <img src={rt5.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
+    <img src={rt6.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
+    <img src={rt7.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
+    <img src={rt8.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
 </div>
 
 이미지 처리 기술을 통해 색상, 패턴, 동작 인식 등을 수행할 수 있습니다.
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-    <div class="flex flex-col items-center">
-        <img src={techGif4.src} class="rounded-xl shadow-lg !m-0 w-full object-cover" alt="기술 미션" />
-        <p class="text-xs text-zinc-500 mt-3 italic">〈Qualifications〉</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-        <img src={techGif5.src} class="rounded-xl shadow-lg !m-0 w-full object-cover" alt="기술 미션" />
-        <p class="text-xs text-zinc-500 mt-3 italic">〈Qualifications〉</p>
-    </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+    <img src={rt9.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
+    <img src={rt10.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
 </div>
 
 매니퓰레이터를 이용하여 물체를 들고, 옮기고, 작은 구멍에 넣는 등 다양한 미션을 수행할 수 있습니다.
 
-{/* 비디오/GIF 갤러리 섹션 */}
-<div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-6 my-12">
-    
-    {/* 1. 왼쪽: 세로로 긴 영상 (2행 점유) */}
-    <div class="md:row-span-3 flex flex-col">
-        <div class="relative h-full overflow-hidden rounded-2xl shadow-lg bg-zinc-100 dark:bg-zinc-900">
-            <img 
-                src={techGif6.src} 
-                class="w-full h-full object-cover !m-0" 
-                alt="미션 영상 1" 
-            />
-            <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                <p class="text-xs font-bold text-white text-center">〈Dexterity 미션 수행 1〉</p>
-            </div>
-        </div>
-    </div>
-
-    {/* 2. 오른쪽 상단: 가로 영상 1 */}
-    <div class="flex flex-col">
-        <div class="relative aspect-video overflow-hidden rounded-2xl shadow-md bg-zinc-100 dark:bg-zinc-900">
-            <img 
-                src={techGif7.src} 
-                class="w-full h-full object-cover !m-0" 
-                alt="미션 영상 2" 
-            />
-            <div class="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
-                <p class="text-[10px] font-bold text-white text-center">〈Dexterity 미션 수행 2〉</p>
-            </div>
-        </div>
-    </div>
-
-    {/* 3. 오른쪽 하단: 가로 영상 2 */}
-    <div class="flex flex-col">
-        <div class="relative aspect-video overflow-hidden rounded-2xl shadow-md bg-zinc-100 dark:bg-zinc-900">
-            <img 
-                src={techGif8.src} 
-                class="w-full h-full object-cover !m-0" 
-                alt="미션 연습 1" 
-            />
-            <div class="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
-                <p class="text-[10px] font-bold text-white text-center">〈Dexterity 미션 연습 1〉</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="flex flex-col">
-        <div class="relative aspect-video overflow-hidden rounded-2xl shadow-md bg-zinc-100 dark:bg-zinc-900">
-            <img 
-                src={techGif9.src} 
-                class="w-full h-full object-cover !m-0" 
-                alt="미션 연습 2" 
-            />
-            <div class="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
-                <p class="text-[10px] font-bold text-white text-center">〈Dexterity 미션 연습 2〉</p>
-            </div>
-        </div>
-    </div>
-
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+    <img src={rt11.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
+    <img src={rt12.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
+    <img src={rt13.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
+    <img src={rt14.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
+    <img src={rt15.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
 </div>
 
 IMU와 LiDAR를 이용하여 localization을 진행하고 map을 생성할 수 있습니다.
-<div class="relative aspect-video overflow-hidden rounded-2xl shadow-md bg-zinc-100 dark:bg-zinc-900">
-    <img 
-        src={techGif10.src} 
-        class="w-full h-full object-cover !m-0" 
-        alt="매핑 기술" 
-    />
-    <div class="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
-        <p class="text-[10px] font-bold text-white text-center">〈매핑 기술〉</p>
-    </div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+    <img src={rt16.src} class="rounded-lg shadow-md !m-0 w-full object-cover" alt="Technology" loading="lazy" />
 </div>
-
-
 
 </ContestDetailLayout>
