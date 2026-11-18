@@ -1,89 +1,113 @@
-# 🤖 ROːBIT Archive Project
-광운대학교 로봇게임단 로빛(ROːBIT)의 활동 기록 및 기술 자산을 보존하기 위한 새로운 아카이브 사이트입니다.  
-기존 Google Sites를 유지하며, 본 사이트는 **GitHub Organization Pages**를 통해 호스팅됩니다.
+# ROːBIT Archive
+
+광운대학교 로봇게임단 로빛(ROːBIT)의 활동 기록과 기술 자산을 보존하는 아카이브 사이트입니다.
+**GitHub Organization Pages**로 호스팅되며, 저장소 이름이 `team-robit.github.io`일 때만 루트 도메인으로 배포되므로 **저장소 이름을 바꾸지 마세요.**
 
 - **사이트 주소**: https://team-robit.github.io
-- Organization Pages는 저장소 이름이 `team-robit.github.io`일 때만 루트 도메인으로 배포되므로, 저장소 이름을 바꾸지 마세요.
+- **원본(구글 사이트)**: https://sites.google.com/view/robitarchieve/main — 모든 페이지·사진·기사 PDF를 이 저장소로 백업했습니다.
 
 ---
 
-## 🛠 Tech Stack
-- **Framework**: [Astro](https://astro.build/) (v5.0+)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Deployment**: GitHub Actions
-- **Data Management**: Astro Content Collections (Markdown/MDX)
+## 기술 스택
+- **Framework**: [Astro](https://astro.build/) 5 (Content Collections, MDX)
+- **Styling**: 직접 작성한 테마 CSS(`src/styles`) + Tailwind CSS(일부 유틸리티)
+- **Fonts**: Pretendard, Archivo
+- **Deployment**: GitHub Actions (`main` 브랜치에 push하면 자동 배포)
 
 ---
 
-## 🚀 시작하기 (Getting Started)
+## 시작하기
 
-프로젝트를 로컬 환경에서 실행하고 수정하는 방법입니다.
-
-### 1. 의존성 설치
 ```bash
 npm install
+npm run dev        # http://localhost:4321
+npm run build      # 배포 전 오류 확인 (dist/ 생성)
+npm run preview    # 빌드 결과 미리보기
 ```
 
-### 2. 개발 서버 실행
-
-```bash
-npm run dev
-```
-
-접속 주소: `http://localhost:4321`
-
-### 3. 빌드 및 배포
-
-본 저장소는 **GitHub Actions**를 통해 `main` 브랜치에 `push`될 때 자동으로 배포됩니다.
-
-```bash
-# 수동 빌드 확인 (오류 체크용)
-npm run build
-```
+Node.js 20 이상을 권장합니다.
 
 ---
 
-## 📂 프로젝트 구조 (Project Structure)
-
-유지보수를 위해 아래 폴더 구조를 반드시 숙지해 주세요.
+## 프로젝트 구조
 
 ```text
 /
 ├── src/
-│   ├── components/   # 버튼, 네비게이션, 카드 등 재사용 가능한 UI 조각
-│   ├── layouts/      # 페이지의 전체 틀 (Header, Footer 포함)
-│   ├── pages/        # 실제 URL 경로 (index.astro가 메인)
-│   ├── content/      # 중요: 실제 데이터(대회 기록, 프로젝트)가 담긴 마크다운 파일
-│   └── styles/       # 글로벌 CSS 및 Tailwind 설정
-├── public/           # 이미지, PDF, 로고 등 정적 파일
-└── astro.config.mjs  # Astro 환경 설정
-
-
+│   ├── content/archive/   # 페이지 본문 (Markdown / MDX). 폴더 이름이 곧 URL 입니다.
+│   ├── data/              # 구조화된 데이터: 수상(awards), 행사(events), 로봇(robots), 기수(generations), 메뉴(nav), 홈(home)
+│   ├── components/        # Header(메가메뉴) · Footer · PageHeader · 각 데이터 화면(AwardsView 등) · MemberRoster
+│   ├── layouts/           # BaseLayout(공통 틀) · DocsLayout(하위 페이지)
+│   ├── pages/             # index.astro(홈) · [...slug].astro(모든 문서)
+│   ├── plugins/           # remark-gallery.mjs — 연속된 이미지를 자동으로 갤러리로 묶음
+│   ├── scripts/site.js    # 메가메뉴, 모바일 메뉴, 스크롤 효과 등
+│   ├── styles/            # theme.css(테마) · doc.css(본문) · views.css(데이터 화면)
+│   └── assets/            # 이미지 (빌드 시 자동 최적화)
+├── public/archive/articles/   # 기사 스캔 PDF (74개)
+├── scripts/backup/        # 원본 구글 사이트 백업·검증 도구
+└── scripts/redesign/      # 리디자인 때 쓴 변환 도구 (일회성)
 ```
-
-
-## ✍️ 유지보수 가이드 (How to Maintain)
-
-### 1. 새로운 프로젝트/글 추가하기
-
-이 사이트는 마크다운 기반의 **Content Collections**를 사용합니다. 새로운 기록을 남기려면 `src/content/` 내의 해당 카테고리 폴더에 `.md` 파일을 생성하세요.
-
-### 2. 레이아웃 수정
-
-전체적인 사이트의 디자인(헤더, 푸터 등)을 바꾸고 싶다면 `src/layouts/Layout.astro` 파일을 수정하세요. 모든 페이지에 일괄 적용됩니다.
-
-### 3. 이미지 업로드
-
-이미지는 `public/images/projects/` 폴더 내에 연도별로 정리하여 업로드하는 것을 권장합니다.
-예: `/public/images/2026/rescue-robot.jpg`
 
 ---
 
-## 📢 인수인계 유의사항
+## 유지보수 가이드
 
-* **일관성 유지**: 스타일 수정 시 가급적 Tailwind CSS의 유틸리티 클래스를 사용하세요.
-* **문서화**: 새로운 기능을 추가할 경우, 이 README 파일의 '유지보수 가이드' 섹션을 업데이트해 주세요.
-* **문의**: 초기 제작자 - 19기 지능팀 박기홍 (Kinesis Akashic)
+### 새 페이지 추가
+`src/content/archive/<섹션>/<이름>.md` 파일을 만들면 `/<섹션>/<이름>` 주소의 페이지가 생깁니다.
+상단 정보(frontmatter)로 페이지 머리 부분이 구성됩니다.
+
+```md
+---
+title: "국방로봇경진대회"            # 큰 제목
+description: "한 줄 설명"            # 메타 설명
+subtitle: "Defense Robot Competition" # 영문 부제
+chips: ["2019 — 2026", "KUBO"]       # 제목 아래 칩
+highlight: "2026 · 1위"              # 강조 칩(그라데이션)
+cover: ../../../assets/assets_contest/defense-robot-003.webp  # 상단 이미지
+coverKind: cutout                    # cutout(배경 없는 로봇) 또는 photo(일반 사진)
+---
+
+## Introduction
+본문은 일반 마크다운입니다. `##` 제목은 번호가 붙고 상단 탭에 자동으로 나타납니다.
+이미지를 줄바꿈으로 나열하면 갤러리로 묶입니다.
+```
+
+- 메뉴(상단 메가메뉴·모바일 메뉴)에 넣으려면 `src/data/nav.ts`에 항목을 추가하세요.
+- 이미지는 `src/assets/` 아래에 넣고 마크다운에서 상대 경로로 불러옵니다.
+
+### 데이터로 관리하는 화면
+긴 목록은 JSON으로 관리합니다. 파일을 수정하면 화면이 자동으로 갱신됩니다.
+
+| 화면 | 데이터 | 비고 |
+|---|---|---|
+| 수상 내역 | `src/data/awards.json` | 연도별 `rows`(날짜·대회·상격·수여 기관)와 `photo` |
+| 참여 행사 | `src/data/events.json` | 이미지는 `assets_events/` 의 파일 이름(확장자 제외) |
+| 로봇 목록 | `src/data/robots.json` | `cat`: humanoid / battle / defense / other |
+| 전체 명단 | `src/data/generations.json` | 기수 카드 |
+| 홈 | `src/data/home.ts` | 최근 성적표, 하이라이트 연표, 숫자 |
+
+기수별 명단은 `src/content/archive/members/*.mdx` 안의 `<MemberRoster>` 데이터를 고칩니다.
+새 기수를 추가할 때는 `generations.json`에도 한 줄 추가하세요.
+
+---
+
+## 백업 도구 (`scripts/backup`)
+원본 구글 사이트를 수집·변환·검증하는 도구입니다. 결과물(`_backup/`)은 git에 포함하지 않습니다.
+
+```bash
+python scripts/backup/extract.py fetch      # 원본 59개 페이지 수집
+python scripts/backup/extract.py convert    # Markdown 변환 + 이미지 다운로드
+node scripts/backup/optimize.mjs            # 이미지 WebP 최적화
+python scripts/backup/verify.py             # 원본 대비 누락 검사 (텍스트·이미지·링크)
+python scripts/redesign/check_links.py      # 빌드 결과의 내부 링크 검사 (build 후)
+```
+
+---
+
+## 인수인계 유의사항
+- **일관성**: 색상·여백은 `src/styles/theme.css` 의 CSS 변수(`:root`)를 사용하세요.
+- **문서화**: 새 기능을 추가하면 이 README 의 '유지보수 가이드'를 갱신해 주세요.
+- **문의**: 초기 제작자 - 19기 지능팀 박기홍 (Kinesis Akashic)
 
 ---
 
