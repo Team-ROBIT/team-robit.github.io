@@ -68,6 +68,10 @@ def local_hashes():
     return hs
 
 
+# 원본과 일부러 다르게 고친 내용 (요청에 따라 수정한 것)
+INTENTIONAL = {
+    "members_current_19th_members": {norm("Software Engineer")},  # 박기홍 파트: Embedded System 으로 변경
+}
 SKIP_TEXT = {norm(x) for x in (
     "AWARD WINNING CAREER 14",  # placeholder text inside one original award row
     "VISION & LOCALIZATION", "CIRCUIT",  # empty headings on the original RoboCup page
@@ -121,7 +125,7 @@ def main():
             t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"", t)
             t = LABEL.sub("", t)
             t = re.sub(r"\d+(?:\.\d)?\s*(?:th|st|nd|rd|기)\(\d\d\)\s*", "", t)  # member labels are re-formatted
-            if len(norm(t)) < 4 or norm(t) in SKIP_TEXT or re.match(r"^\(?https?://", t) or re.match(r"^수상\s?횟수", t):
+            if len(norm(t)) < 4 or norm(t) in SKIP_TEXT or norm(t) in INTENTIONAL.get(slug, ()) or re.match(r"^\(?https?://", t) or re.match(r"^수상\s?횟수", t):
                 continue
             if slug.startswith("contest_수상내역_") and re.match(r"^\d\d/\d\d ", t):
                 t = t.replace("[AWARD WINNING CAREER 14]", "").replace("47대 배틀제왕 47대 배틀제왕", "47대 배틀제왕")

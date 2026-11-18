@@ -3,7 +3,7 @@ title: "SRCIRC 휴머노이드"
 description: "SRC·IRC 휴머노이드 로봇 스포츠 지능형 하이테크 부문"
 subtitle: "SRCIRC Humanoid · Intelligent High-tech"
 chips: ["육상", "농구", "컬링", "하노이"]
-highlight: "2026 SRC·IRC 1위"
+highlight: "2026 1위 · 2위"
 cover: ../../../assets/assets_contest/team-src-irc.webp
 coverKind: photo
 sidebar: false
@@ -22,6 +22,9 @@ SRCIRC 휴머노이드 로봇 스포츠 지능형 하이테크는 휴머노이�
 ### 2026년도 결과
 
 - 2026년 SRC·IRC 휴머노이드 로봇 스포츠 지능형 하이테크 부문 1위
+- 2026년 SRC·IRC 휴머노이드 로봇 스포츠 지능형 하이테크 부문 2위
+
+2026년 대회에는 2개 팀이 출전해 1위와 2위를 차지했습니다.
 
 ### 2024년도 결과
 

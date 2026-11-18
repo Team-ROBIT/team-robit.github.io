@@ -3,7 +3,7 @@ title: "국방로봇경진대회"
 description: "국방 무인 로봇 기술을 겨루는 경진대회"
 subtitle: "Defense Robot Competition"
 chips: ["2019 — 2026", "RMP-1", "방국 2세", "KUBO", "LUCO", "Eclipse"]
-highlight: "2025 · 2026 연속 1위"
+highlight: "2025 최우수상 · 2026 대상"
 cover: ../../../assets/assets_contest/eclipse-2026-defense.webp
 coverKind: photo
 sidebar: false
@@ -23,16 +23,18 @@ sidebar: false
 
 ## 최근 결과
 
-- **2026년** — Eclipse로 1위(산업통상부장관상)를 수상했습니다.
-- **2025년** — 기존과 다른 모바일 베이스인 LUCO로 1위를 수상했습니다.
+- **2026년** — Eclipse로 1위, 대상(산업통상부장관상)을 수상했습니다.
+- **2025년** — 기존과 다른 모바일 베이스인 LUCO로 1위, 최우수상(육군참모총장상)을 수상했습니다.
+
+![2026 국방로봇경진대회 대상(산업통상부장관상) 시상 — Eclipse와 함께](../../../assets/assets_contest/defense-2026-award.webp)
 
 ## ROBOT
 
 - **RMP-1** — 2019 한국지능로봇경진대회 · 국방로봇 부문
 - **방국 2세** — 2021 국방로봇경진대회
 - **KUBO** — 2022 국방로봇경진대회
-- **LUCO** — 2025 국방로봇경진대회 · 1위
-- **Eclipse** — 2026 국방로봇경진대회 · 1위
+- **LUCO** — 2025 국방로봇경진대회 · 최우수상(육군참모총장상)
+- **Eclipse** — 2026 국방로봇경진대회 · 대상(산업통상부장관상)
 
 ![](../../../assets/assets_contest/defense-robot-001.webp)
 

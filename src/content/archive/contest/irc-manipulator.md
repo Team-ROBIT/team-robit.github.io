@@ -10,11 +10,21 @@ coverKind: photo
 
 ## Overview
 
-**SAFE LAB**은 실험실에 사람이 남겨 둔 위험 요소를 스스로 찾아 정리하는 자율 로봇입니다. 2026년 지능형 로봇 경진대회(IRC) 매니퓰레이터 종목에 출전해 2위를 수상했습니다.
+**SAFE LAB**은 실험실에 사람이 남겨 둔 위험 요소를 스스로 찾아 정리하는 자율 로봇입니다. 2026년 지능형 로봇 경진대회(IRC) 매니퓰레이터 종목에 출전해 2위(국가기술표준원장상)를 수상했습니다.
 
 [![SAFE LAB 시연 영상](../../../assets/assets_contest/safelab-2026-demo.webp)](https://youtu.be/OLy96QEyY1U)
 
 [▶ 시연 영상 보기](https://youtu.be/OLy96QEyY1U) · [제작 이야기](https://team-robit.github.io/irc-mani-web/)
+
+## 대회 현장
+
+![발표 장면](../../../assets/assets_contest/irc-2026-presentation.webp)
+
+![시연 준비](../../../assets/assets_contest/irc-2026-demo.webp)
+
+![국가기술표준원장상 시상](../../../assets/assets_contest/irc-2026-award.webp)
+
+- 발표 · 시연 준비 · 시상(국가기술표준원장상)
 
 ## Hardware
 
