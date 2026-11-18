@@ -1,0 +1,52 @@
+---
+// 수상 내역: 연도별 접이식 목록 (데이터: src/data/awards.json)
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import years from '../data/awards.json';
+
+const photos = import.meta.glob<{ default: ImageMetadata }>('../assets/assets_awards/*.webp', { eager: true });
+const photo = (stem: string | null) => (stem ? photos[`../assets/assets_awards/${stem}.webp`]?.default : undefined);
+
+const tier = (r: string) => {
+  if (/준우승/.test(r)) return 's';
+  if (/1위|우승|대상|금상|1등|통합|대통령/.test(r)) return 'g';
+  if (/2위|은상|2등/.test(r)) return 's';
+  if (/3위|4위|동상|3등/.test(r)) return 'b';
+  return '';
+};
+const total = years.reduce((n, y) => n + y.rows.length, 0);
+const golds = years.reduce((n, y) => n + y.rows.filter((r) => tier(r.r) === 'g').length, 0);
+const headline = (rows: { n: string; r: string }[]) => (rows.find((r) => tier(r.r) === 'g') ?? rows[0])?.n ?? '';
+---
+
+<div class="big-n rv">
+  <div><b>{total}</b><span>이 페이지에 정리된 수상</span></div>
+  <div><b>{years.length}</b><span>연도 (2006 — 2026)</span></div>
+  <div><b>{golds}</b><span>1위 · 대상급</span></div>
+</div>
+
+{years.map((y, i) => {
+  const img = photo(y.photo);
+  return (
+    <details class="yr rv" id={`y${y.year}`} open={i < 4}>
+      <summary>
+        <span class="y">{y.year}</span>
+        <span class="t">{headline(y.rows)}<small>대표 성과</small></span>
+        <span class="cnt">{y.rows.length}건</span>
+      </summary>
+      <div class="body" style={img ? undefined : 'grid-template-columns:1fr'}>
+        {img && <div class="ph2"><Image src={img} alt={`${y.year}년 수상 사진`} width={520} loading="lazy" /></div>}
+        <div>
+          {y.rows.map((r) => (
+            <div class="ar">
+              <span class="d">{r.d}</span>
+              <span class="n">{r.n}</span>
+              <span class="o">{r.o}</span>
+              <span class={`rp ${tier(r.r)}`}>{r.r}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </details>
+  );
+})}

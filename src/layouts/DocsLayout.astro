@@ -1,91 +1,41 @@
 ---
-// src/layouts/DocsLayout.astro
-import { Image } from 'astro:assets';
-import Sidebar from '../components/Sidebar.astro';
-import RightToC from '../components/RightToC.astro';
-import logoCircle from '../assets/robit_logo_kw_circle.png';
-import '../styles/global.css';
+// 하위 페이지 공통 레이아웃: 페이지 헤더 + (h2가 둘 이상이면) 고정 탭 + 본문
+import type { ImageMetadata } from 'astro';
+import BaseLayout from './BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
 
 interface Props {
-    title: string;
-    // 1. 마크다운에서 추출한 headings 타입을 추가합니다 (선택 사항)
-    headings?: { depth: number; slug: string; text: string }[];
-	isDocs?: boolean; // 추가: 마크다운 문서인지 여부
-	hideHeader?: boolean; // 홈처럼 자체 히어로가 있는 페이지에서 상단 {title} 중복 표시를 끔
+  title: string;
+  description?: string;
+  kicker?: string;
+  crumb?: string;
+  subtitle?: string;
+  chips?: string[];
+  highlight?: string;
+  cover?: ImageMetadata;
+  coverKind?: 'cutout' | 'photo';
+  headings?: { depth: number; slug: string; text: string }[];
+  /** 데이터 기반 템플릿 페이지처럼 .doc 스타일을 쓰지 않고 자체 레이아웃을 쓸 때 */
+  bare?: boolean;
+  wide?: boolean;
+  tabs?: { href: string; label: string }[];
 }
-
-const { title, headings, isDocs = true, hideHeader = false } = Astro.props;
-
-// 2. 목차를 보여줄지 결정하는 로직: headings가 있고, 실제 내용이 있을 때만 true
-const showToC = headings && headings.length > 0;
+const { title, description, kicker, crumb, subtitle, chips, highlight, cover, coverKind, headings = [], bare = false, wide = false } = Astro.props;
+const tabs =
+  Astro.props.tabs ??
+  headings.filter((h) => h.depth === 2).map((h) => ({ href: `#${h.slug}`, label: h.text }));
 ---
 
-<!doctype html>
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="RO:BIT Archive" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet" />
-        <title>{title} | RO:BIT Archive</title>
-    </head>
-    <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
-        <div class="flex min-h-screen">
-            <aside class="w-64 border-r border-zinc-200 dark:border-zinc-800 sticky top-0 h-screen overflow-y-auto hidden md:block">
-                <div class="p-6">
-                    <div class="mb-8 px-2">
-                    <a
-                        href="/"
-                        class="flex items-center gap-2 text-xl font-bold tracking-tighter text-zinc-900 dark:text-white bg-transparent border-none p-0 cursor-pointer transition-opacity hover:opacity-80"
-                    >
-                        <Image src={logoCircle} alt="RO:BIT" width={32} height={32} class="w-8 h-8 object-contain" />
-                        ROːBIT <span class="text-brand dark:text-brand-light">Archive</span>
-                    </a>
-                    </div>
-                    <Sidebar />
-                </div>
-            </aside>
-
-            <main class="flex-1 px-6 py-12 md:px-12">
-                <div class="max-w-4xl mx-auto">
-                    {!hideHeader && (
-                        <header class="mb-10">
-                            <h1 class="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50">
-                                {title}
-                            </h1>
-                        </header>
-                    )}
-                    <article class={isDocs ? "prose prose-zinc dark:prose-invert max-w-none" : ""}>
-						<slot />
-					</article>
-                </div>
-            </main>
-
-            {showToC && (
-                <aside class="w-64 hidden xl:block sticky top-0 h-screen p-8">
-                    <RightToC headings={headings} />
-                </aside>
-            )}
-        </div>
-    </body>
-</html>
-
-<style is:global>
-    ::-webkit-scrollbar {
-        width: 6px;
-    }
-    ::-webkit-scrollbar-thumb {
-        background-color: #d4d4d8;
-        border-radius: 9999px;
-    }
-    @media (prefers-color-scheme: dark) {
-        ::-webkit-scrollbar-thumb {
-            background-color: #3f3f46;
-        }
-    }
-</style>
+<BaseLayout title={title} description={description}>
+  <PageHeader {kicker} {crumb} {title} {subtitle} {chips} {highlight} {cover} {coverKind} />
+  {tabs.length >= 2 && (
+    <div class="tabs">
+      <div class="wrap">
+        {tabs.map((t, i) => <a class={i === 0 ? 'on' : ''} href={t.href}>{t.label}</a>)}
+      </div>
+    </div>
+  )}
+  <div class:list={['page', (wide || bare) && 'wide']}>
+    {bare ? <slot /> : <article class="doc"><slot /></article>}
+  </div>
+</BaseLayout>

@@ -1,0 +1,35 @@
+---
+// 참여 행사: 날짜 고정 + 사진 모자이크 (데이터: src/data/events.json)
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import events from '../data/events.json';
+
+const imgs = import.meta.glob<{ default: ImageMetadata }>('../assets/assets_events/*.webp', { eager: true });
+const img = (stem: string) => imgs[`../assets/assets_events/${stem}.webp`]?.default;
+---
+
+<div class="evl">
+  {events.map((e) => {
+    const [y, mo, d] = e.date.split('.');
+    return (
+      <article class="e rv">
+        <div class="dt"><b>{y}</b><span>{mo}.{d}</span></div>
+        <div>
+          <h3>{e.name}</h3>
+          <div class="meta"><span>{e.place}</span><span>{e.people}</span></div>
+          {e.desc.map((p) => <p>{p}</p>)}
+          {e.youtube.map((v) => (
+            <iframe class="yt" src={`https://www.youtube.com/embed/${v}`} title={`${e.name} 영상`} loading="lazy" allowfullscreen></iframe>
+          ))}
+          {e.images.length > 0 && (
+            <div class={`mos n${Math.min(e.images.length, 6)}`}>
+              {e.images.map((s, i) => img(s) && (
+                <figure><Image src={img(s)} alt={`${e.name} 사진 ${i + 1}`} width={760} loading="lazy" /></figure>
+              ))}
+            </div>
+          )}
+        </div>
+      </article>
+    );
+  })}
+</div>

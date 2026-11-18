@@ -1,0 +1,24 @@
+---
+// 전체 명단: 기수 카드 (데이터: src/data/generations.json)
+import gens from '../data/generations.json';
+
+const years: Record<number, string> = { 1: '2006', 2: '2007', 3: '2008', 4: '2009', 5: '2010', 6: '2011', 7: '2012', 8: '2013', 9: '2014', 10: '2014–15', 11: '2015–16', 12: '2017', 13: '2018', 14: '2019', 15: '2020', 16: '2021', 17: '2022', 18: '2023', 19: '2024', 20: '2026' };
+const list = [...gens].sort((a, b) => b.num - a.num);
+const total = gens.reduce((n, g) => n + g.count, 0);
+---
+
+<div class="big-n rv">
+  <div><b>{gens.length}</b><span>기수</span></div>
+  <div><b>{total}</b><span>이 아카이브에 기록된 단원</span></div>
+  <div><b>{gens.filter((g) => g.status === '현역').length}</b><span>현역 기수</span></div>
+</div>
+<div class="gg rv">
+  {list.map((g) => (
+    <a class="gc2" href={`/members/${g.slug}`} data-s={g.status}>
+      <span class="st">{g.status}</span>
+      <b>{g.num}기</b>
+      <small>{years[g.num]}</small>
+      <em>{g.count}명</em>
+    </a>
+  ))}
+</div>

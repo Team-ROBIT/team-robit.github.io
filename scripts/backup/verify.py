@@ -19,23 +19,23 @@ OPT = ROOT / "_backup" / "img-opt"
 ARCH = ROOT / "src" / "content" / "archive"
 
 MAP = {
-    "contest_참여대회_robocup_humanoid_soccer": ["contest/robocup-humanoid.mdx"],
-    "contest_참여대회_robocup_rescue": ["contest/robocup-rescue.mdx"],
-    "contest_참여대회_srcirc_휴머노이드": ["contest/src-irc-humanoid.mdx"],
+    "contest_참여대회_robocup_humanoid_soccer": ["contest/robocup-humanoid.md"],
+    "contest_참여대회_robocup_rescue": ["contest/robocup-rescue.md"],
+    "contest_참여대회_srcirc_휴머노이드": ["contest/src-irc-humanoid.md"],
     "contest_참여대회_seoul_tech_지능로봇대회_씨름로봇": ["contest/ssireum.md"],
     "contest_참여대회_steam_cup_turtlebot_autorace": ["contest/turtlebot-autorace.md"],
     "contest_참여대회_국방로봇경진대회": ["contest/defense-robot.md"],
     "contest_참여대회_로봇파워_배틀로봇": ["contest/robotpower-battle.md"],
     "contest_참여대회_로봇파워_휴머노이드": ["contest/robotpower-humanoid.md"],
     "contest_참여대회": ["contest/participation.mdx"],
-    "contest_수상내역": ["contest/awards.md"],
-    "contest_수상내역_20072014": ["contest/awards.md"],
-    "contest_수상내역_20152024": ["contest/awards.md"],
-    "events_참여_행사": ["events/participation.md"],
+    "contest_수상내역": ["contest/awards.md", "../../data/awards.json"],
+    "contest_수상내역_20072014": ["contest/awards.md", "../../data/awards.json"],
+    "contest_수상내역_20152024": ["contest/awards.md", "../../data/awards.json"],
+    "events_참여_행사": ["events/participation.md", "../../data/events.json"],
     "events_출연_방송": ["events/broadcast.md"],
     "articles_기사_목록": ["articles/press.md"],
-    "robots_로봇_목록": ["robots/list.md"],
-    "main": ["overview/information.md", "overview/welcome.md"],
+    "robots_로봇_목록": ["robots/list.md", "../../data/robots.json"],
+    "main": ["overview/information.md"],
     "main_information": ["overview/information.md"],
     "roːbit": ["contact/contact.md"],
     "members_graduated_1st_members_표윤석": ["members/1st-profile.md"],
@@ -68,6 +68,10 @@ def local_hashes():
     return hs
 
 
+# 원본과 일부러 다르게 고친 내용 (요청에 따라 수정한 것)
+INTENTIONAL = {
+    "members_current_19th_members": {norm("Software Engineer")},  # 박기홍 파트: Embedded System 으로 변경
+}
 SKIP_TEXT = {norm(x) for x in (
     "AWARD WINNING CAREER 14",  # placeholder text inside one original award row
     "VISION & LOCALIZATION", "CIRCUIT",  # empty headings on the original RoboCup page
@@ -88,11 +92,12 @@ def ham(a, b):
 
 
 def award_rows():
+    import json
+
     rows = []
-    for line in (ARCH / "contest/awards.md").read_text(encoding="utf-8").splitlines():
-        m = re.match(r"\|\s*\**(\d\d/\d\d)\**\s*\|(.*)\|\s*$", line)
-        if m:
-            rows.append((m.group(1), norm(m.group(2))))
+    for y in json.loads((ROOT / "src" / "data" / "awards.json").read_text(encoding="utf-8")):
+        for r in y["rows"]:
+            rows.append((r["d"], norm(r["n"] + r["r"] + r["o"])))
     return rows
 
 
@@ -120,7 +125,7 @@ def main():
             t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"", t)
             t = LABEL.sub("", t)
             t = re.sub(r"\d+(?:\.\d)?\s*(?:th|st|nd|rd|기)\(\d\d\)\s*", "", t)  # member labels are re-formatted
-            if len(norm(t)) < 4 or norm(t) in SKIP_TEXT or re.match(r"^\(?https?://", t) or re.match(r"^수상\s?횟수", t):
+            if len(norm(t)) < 4 or norm(t) in SKIP_TEXT or norm(t) in INTENTIONAL.get(slug, ()) or re.match(r"^\(?https?://", t) or re.match(r"^수상\s?횟수", t):
                 continue
             if slug.startswith("contest_수상내역_") and re.match(r"^\d\d/\d\d ", t):
                 t = t.replace("[AWARD WINNING CAREER 14]", "").replace("47대 배틀제왕 47대 배틀제왕", "47대 배틀제왕")

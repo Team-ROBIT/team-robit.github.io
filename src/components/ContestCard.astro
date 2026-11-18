@@ -1,27 +1,22 @@
 ---
-// src/components/ContestCard.astro
+// 참여 대회 목록의 카드. href가 없으면 클릭 불가(상세 페이지 준비 중) 상태로 표시한다.
+//   cutout: 배경이 투명한 로봇 사진일 때(밝은 배경 위에 얹는다)
+//   bare:   이미지에 이미 제목이 들어 있어 제목 겹쳐 쓰기를 생략할 때
 import { Image } from 'astro:assets';
 
 interface Props {
     imagePath: any;
     title: string;
-    href: string; // 카드 클릭 시 이동할 경로
+    href?: string;
+    cutout?: boolean;
+    bare?: boolean;
 }
-
-// 1. href를 여기서 꺼내주어야 합니다.
-const { imagePath, title, href } = Astro.props;
+const { imagePath, title, href, cutout = false, bare = false } = Astro.props;
+const Tag = href ? 'a' : 'div';
 ---
 
-<a href={href} class="flex flex-col space-y-3 group cursor-pointer no-underline">
-    <div class="relative w-full aspect-video overflow-hidden rounded-2xl shadow-md bg-zinc-200 dark:bg-zinc-800">
-        <Image 
-            src={imagePath} 
-            alt={title} 
-            class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110 !m-0 block"
-        />
-        <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-    </div>
-    <p class="text-sm font-bold text-center text-zinc-700 dark:text-zinc-300 transition-colors duration-300 group-hover:text-brand dark:group-hover:text-brand-light">
-        {title}
-    </p>
-</a>
+<Tag href={href} class:list={['cc', !href && 'off', cutout && 'cut', bare && 'bare']} aria-label={title}>
+    <Image src={imagePath} alt={bare ? title : ''} width={720} loading="lazy" />
+    {!bare && <span class="ct">{title}</span>}
+    {href ? <span class="go">→</span> : <span class="soon">상세 페이지 준비 중</span>}
+</Tag>

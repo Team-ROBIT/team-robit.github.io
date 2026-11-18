@@ -28,3 +28,9 @@ _backup/
 
 # python bytecode
 __pycache__/
+
+# temporary design drafts
+_drafts/
+
+# raw photos/videos waiting to be imported
+_inbox/

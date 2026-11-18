@@ -2,9 +2,9 @@
 title: "출연 방송"
 description: "방송 출연 관련 대외 활동과 언론 보도 자료"
 order: 2
+subtitle: "Broadcast Appearances"
+highlight: "방송 출연"
 ---
-
-# 📺 출연 방송
 
 ![](../../../assets/assets_events/broadcast-001.webp)
 

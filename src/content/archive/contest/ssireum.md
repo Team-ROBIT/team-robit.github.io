@@ -1,5 +1,11 @@
 ---
 title: "SEOUL TECH 지능로봇대회 씨름로봇"
+description: "상대 로봇을 경기장 밖으로 밀어내는 지능형 씨름로봇 대회"
+subtitle: "SRC·IRC Ssireum Robot"
+chips: ["2011년부터 참가", "2018 — 2021 4연속 우승", "2025 1위 · 4위"]
+highlight: "2026 2위 · 3위"
+cover: ../../../assets/assets_contest/ssireum-001.webp
+coverKind: photo
 sidebar: false
 ---
 
@@ -16,6 +22,11 @@ ROBIT은 2011년도부터 꾸준히 씨름로봇 대회에 참여해 왔으며,
 ![](../../../assets/assets_contest/ssireum-002.webp)
 
 ![](../../../assets/assets_contest/ssireum-003.webp)
+
+## 최근 결과
+
+- 2025년: 1위, 4위
+- 2026년: 2위, 3위 (2개 팀 출전)
 
 ## 사용된 기술
 

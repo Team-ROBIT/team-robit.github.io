@@ -2,6 +2,7 @@
 title: "Contact"
 description: "로빛 공식 SNS 및 연락처"
 order: 1
+subtitle: "Contact"
 ---
 
 로빛의 공식 SNS 및 연락처입니다.

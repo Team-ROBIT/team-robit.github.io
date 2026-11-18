@@ -1,0 +1,122 @@
+[
+ {
+  "slug": "1st",
+  "status": "졸업",
+  "num": 1,
+  "count": 14
+ },
+ {
+  "slug": "2nd",
+  "status": "졸업",
+  "num": 2,
+  "count": 2
+ },
+ {
+  "slug": "3rd",
+  "status": "졸업",
+  "num": 3,
+  "count": 8
+ },
+ {
+  "slug": "4th",
+  "status": "졸업",
+  "num": 4,
+  "count": 7
+ },
+ {
+  "slug": "5th",
+  "status": "졸업",
+  "num": 5,
+  "count": 5
+ },
+ {
+  "slug": "6th",
+  "status": "졸업",
+  "num": 6,
+  "count": 6
+ },
+ {
+  "slug": "7th",
+  "status": "졸업",
+  "num": 7,
+  "count": 5
+ },
+ {
+  "slug": "8th",
+  "status": "졸업",
+  "num": 8,
+  "count": 8
+ },
+ {
+  "slug": "9th",
+  "status": "졸업",
+  "num": 9,
+  "count": 7
+ },
+ {
+  "slug": "10th",
+  "status": "졸업",
+  "num": 10,
+  "count": 7
+ },
+ {
+  "slug": "11th",
+  "status": "졸업",
+  "num": 11,
+  "count": 8
+ },
+ {
+  "slug": "12th",
+  "status": "졸업",
+  "num": 12,
+  "count": 8
+ },
+ {
+  "slug": "13th",
+  "status": "졸업",
+  "num": 13,
+  "count": 8
+ },
+ {
+  "slug": "14th",
+  "status": "졸업",
+  "num": 14,
+  "count": 8
+ },
+ {
+  "slug": "15th",
+  "status": "졸업",
+  "num": 15,
+  "count": 6
+ },
+ {
+  "slug": "16th",
+  "status": "졸업",
+  "num": 16,
+  "count": 6
+ },
+ {
+  "slug": "17th",
+  "status": "졸업",
+  "num": 17,
+  "count": 7
+ },
+ {
+  "slug": "18th",
+  "status": "은퇴",
+  "num": 18,
+  "count": 8
+ },
+ {
+  "slug": "19th",
+  "status": "현역",
+  "num": 19,
+  "count": 7
+ },
+ {
+  "slug": "20th",
+  "status": "현역",
+  "num": 20,
+  "count": 7
+ }
+]
