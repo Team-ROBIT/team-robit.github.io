@@ -4,20 +4,23 @@ description: "2008년 활동한 3기(3.5기 포함) 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-3-captain-1.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '장동욱' },
-    { name: '남혜선' },
+<MemberRoster
+  captain={{ name: "김영용", heading: 'RO:BIT 3rd Captain', photos: [i1] }}
+  teams={[
+  { team: "Humanoid Team", photos: [], members: [
+    { name: "장동욱", label: "3기(08)" },
+    { name: "남혜선", label: "3.5기(07)" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '김영용', captain: true },
-    { name: '최인성' },
-    { name: '김명종' },
-    { name: '박선미' },
+  { team: "Intelligent Robot Team", photos: [], members: [
+    { name: "최인성", label: "3.5기(04)" },
+    { name: "김영용", label: "3.5기(05)", captain: true },
+    { name: "김명종", label: "3.5기(08)" },
+    { name: "박선미", label: "3.5기(08)" },
   ]},
-  { team: 'Battle Robot Team', members: [
-    { name: '손민기' },
-    { name: '조준태' },
+  { team: "Battle Robot Team", photos: [], members: [
+    { name: "손민기", label: "3기(08)" },
+    { name: "조준태", label: "3기(08)" },
   ]},
 ]} />

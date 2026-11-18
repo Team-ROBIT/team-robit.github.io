@@ -4,18 +4,24 @@ description: "2015~2016년 활동한 11기(11.5기 포함) 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-11-team-1.webp';
+import i2 from '../../../assets/assets_members/members-11-team-2.webp';
+import i3 from '../../../assets/assets_members/members-11-captain-3.webp';
+import i4 from '../../../assets/assets_members/members-11-captain-4.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '박찬식', note: '인터뷰 영상 있음' },
-    { name: '최인구' },
-    { name: '정해범' },
-    { name: '신동민' },
+<MemberRoster
+  captain={{ name: "장영준", heading: 'RO:BIT 11th Captain', photos: [i3, i4] }}
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "박찬식", label: "11기(15)", interview: "https://www.youtube.com/watch?v=uBCkUj8fWQs" },
+    { name: "최인구", label: "11.5기(16)" },
+    { name: "정해범", label: "11.5기(16)" },
+    { name: "신동민", label: "11.5기(16)" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '신유섭' },
-    { name: '장영준', captain: true },
-    { name: '조영훈' },
-    { name: '이민호' },
+  { team: "Intelligent Robot Team", photos: [i2], members: [
+    { name: "신유섭", label: "11기(15)" },
+    { name: "장영준", label: "11.5기(14)", captain: true },
+    { name: "조영훈", label: "11.5기(16)" },
+    { name: "이민호", label: "11.5기(16)" },
   ]},
 ]} />

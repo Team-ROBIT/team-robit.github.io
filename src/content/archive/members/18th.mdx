@@ -4,18 +4,29 @@ description: "2023년 활동한 18기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-18-team-1.webp';
+import i2 from '../../../assets/assets_members/members-18-member-2.webp';
+import i3 from '../../../assets/assets_members/members-18-member-3.webp';
+import i4 from '../../../assets/assets_members/members-18-member-4.webp';
+import i5 from '../../../assets/assets_members/members-18-member-5.webp';
+import i6 from '../../../assets/assets_members/members-18-team-6.webp';
+import i7 from '../../../assets/assets_members/members-18-member-7.webp';
+import i8 from '../../../assets/assets_members/members-18-member-8.webp';
+import i9 from '../../../assets/assets_members/members-18-captain-9.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '신태용', part: 'Computer Vision', github: 'anemoiiaa' },
-    { name: '유현우', part: 'Hardware Design', github: '03YHW' },
-    { name: '장정인', part: 'Circuit Design', github: 'inwjd' },
-    { name: '정유정', part: 'Humanoid Walking', github: 'yujung24' },
+<MemberRoster
+  captain={{ name: "변정욱", heading: 'RO:BIT 18th Captain', photos: [i9] }}
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "신태용", label: "18기(23)", part: "Computer Vision", github: "anemoiiaa", photo: i2 },
+    { name: "유현우", label: "18기(23)", part: "Hardware Design", github: "03YHW", photo: i3 },
+    { name: "장정인", label: "18기(23)", part: "Circuit Design", github: "inwjd", photo: i4 },
+    { name: "정유정", label: "18기(23)", part: "Humanoid Walking", github: "yujung24", photo: i5 },
   ]},
-  { team: 'Intelligence Robot Team', members: [
-    { name: '변정욱', part: 'Circuit Design', captain: true, github: 'Jeong042' },
-    { name: '소재웅', part: 'Hardware Design', github: 'jaewwong' },
-    { name: '이선경', part: 'Software Engineer', github: 'lee-sunkyoung' },
-    { name: '홍지현', part: 'Computer Vision', github: 'mkdir-sweetiepie' },
+  { team: "Intelligence Robot Team", photos: [i6], members: [
+    { name: "변정욱", label: "18기(23)", part: "Circuit Design", github: "Jeong042", photo: i7, captain: true },
+    { name: "소재웅", label: "18기(23)", part: "Hardware Design", github: "jaewwong", photo: i8 },
+    { name: "이선경", label: "18기(23)", part: "Software Engineer", github: "lee-sunkyoung" },
+    { name: "홍지현", label: "18기(23)", part: "Computer Vision", github: "mkdir-sweetiepie" },
   ]},
 ]} />

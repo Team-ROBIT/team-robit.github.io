@@ -4,18 +4,23 @@ description: "2019년 활동한 14기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-14-team-1.webp';
+import i2 from '../../../assets/assets_members/members-14-team-2.webp';
+import i3 from '../../../assets/assets_members/members-14-captain-3.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '박준수' },
-    { name: '엄일영' },
-    { name: '최성우' },
-    { name: '한도형' },
+<MemberRoster
+  captain={{ name: "김현서", heading: 'RO:BIT 14th Captain', photos: [i3] }}
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "박준수", label: "14기(19)" },
+    { name: "엄일영", label: "14기(17)" },
+    { name: "최성우", label: "14기(19)" },
+    { name: "한도형", label: "14기(19)" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '김동환' },
-    { name: '김진' },
-    { name: '김현서', captain: true },
-    { name: '유정석' },
+  { team: "Intelligent Robot Team", photos: [i2], members: [
+    { name: "김동환", label: "14기(19)" },
+    { name: "김진", label: "14기(19)" },
+    { name: "김현서", label: "14기(19)", captain: true },
+    { name: "유정석", label: "14기(19)" },
   ]},
 ]} />

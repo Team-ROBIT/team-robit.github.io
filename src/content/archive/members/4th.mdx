@@ -4,19 +4,22 @@ description: "2009년 활동한 4기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-4-captain-1.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '오진환', captain: true },
-    { name: '김진형' },
+<MemberRoster
+  captain={{ name: "오진환", heading: 'RO:BIT 4th Captain', photos: [i1] }}
+  teams={[
+  { team: "Humanoid Team", photos: [], members: [
+    { name: "오진환", label: "4기(09)", captain: true },
+    { name: "김진형", label: "4기(09)" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '박현우' },
-    { name: '오윤식' },
-    { name: '전현근' },
+  { team: "Intelligent Robot Team", photos: [], members: [
+    { name: "박현우", label: "4기(09)" },
+    { name: "오윤식", label: "4기(09)" },
+    { name: "전현근", label: "4기(09)" },
   ]},
-  { team: 'Battle Robot Team', members: [
-    { name: '이재성' },
-    { name: '이다빈' },
+  { team: "Battle Robot Team", photos: [], members: [
+    { name: "이재성", label: "4기(09)" },
+    { name: "이다빈", label: "4기(09)" },
   ]},
 ]} />

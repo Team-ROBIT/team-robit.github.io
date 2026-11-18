@@ -4,18 +4,23 @@ description: "2018년 활동한 13기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-13-team-1.webp';
+import i2 from '../../../assets/assets_members/members-13-team-2.webp';
+import i3 from '../../../assets/assets_members/members-13-captain-3.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '김건희' },
-    { name: '김동현' },
-    { name: '남준희' },
-    { name: '박효재' },
+<MemberRoster
+  captain={{ name: "노주형", heading: 'RO:BIT 13th Captain', photos: [i3] }}
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "김건희", label: "13기(18)" },
+    { name: "김동현", label: "13기(18)" },
+    { name: "남준희", label: "13기(18)" },
+    { name: "박효재", label: "13기(18)" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '노주형', captain: true },
-    { name: '손주환' },
-    { name: '오윤식' },
-    { name: '황규빈' },
+  { team: "Intelligent Robot Team", photos: [i2], members: [
+    { name: "노주형", label: "13기(18)", captain: true },
+    { name: "손주환", label: "13기(18)" },
+    { name: "오윤식", label: "13기(18)" },
+    { name: "황규빈", label: "13기(18)" },
   ]},
 ]} />

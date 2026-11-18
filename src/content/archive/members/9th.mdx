@@ -4,17 +4,22 @@ description: "2014년 활동한 9기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-9-team-1.webp';
+import i2 from '../../../assets/assets_members/members-9-team-2.webp';
+import i3 from '../../../assets/assets_members/members-9-captain-3.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '박민수' },
-    { name: '박휘재' },
-    { name: '이기백' },
+<MemberRoster
+  captain={{ name: "김준호", heading: 'RO:BIT 9th Captain', photos: [i3] }}
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "박민수", label: "9기(14)" },
+    { name: "박휘재", label: "9기(14)" },
+    { name: "이기백", label: "9기(14)" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '김준호', captain: true },
-    { name: '김지훈' },
-    { name: '오유경' },
-    { name: '이신형' },
+  { team: "Intelligent Robot Team", photos: [i2], members: [
+    { name: "김준호", label: "9기(14)", captain: true },
+    { name: "김지훈", label: "9기(14)" },
+    { name: "오유경", label: "9기(14)" },
+    { name: "이신형", label: "9기(14)" },
   ]},
 ]} />

@@ -4,17 +4,29 @@ description: "2022년 활동한 17기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-17-team-1.webp';
+import i2 from '../../../assets/assets_members/members-17-member-2.webp';
+import i3 from '../../../assets/assets_members/members-17-member-3.webp';
+import i4 from '../../../assets/assets_members/members-17-member-4.webp';
+import i5 from '../../../assets/assets_members/members-17-team-5.webp';
+import i6 from '../../../assets/assets_members/members-17-member-6.webp';
+import i7 from '../../../assets/assets_members/members-17-member-7.webp';
+import i8 from '../../../assets/assets_members/members-17-member-8.webp';
+import i9 from '../../../assets/assets_members/members-17-member-9.webp';
+import i10 from '../../../assets/assets_members/members-17-captain-10.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '김대겸', part: 'Hardware Design', github: 'daekyum02' },
-    { name: '윤소정', part: 'Computer Vision', github: 'yu-nsojeong' },
-    { name: '장승원', part: 'Humanoid Walking', github: 'SeungWon-Jang17' },
+<MemberRoster
+  captain={{ name: "이명진", heading: 'RO:BIT 17th Captain', photos: [i10] }}
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "김대겸", label: "17기(22)", part: "Hardware Design", github: "daekyum02", photo: i2 },
+    { name: "윤소정", label: "17기(22)", part: "Computer Vision", github: "yu-nsojeong", photo: i3 },
+    { name: "장승원", label: "17기(22)", part: "Humanoid Walking", github: "SeungWon-Jang17", photo: i4 },
   ]},
-  { team: 'Intelligence Robot Team', members: [
-    { name: '이명진', part: 'Software Engineer', github: 'mjlee111' },
-    { name: '이민석', part: 'Software Engineer', github: 'minseokle' },
-    { name: '이승훈', part: 'Software Engineer', github: 'Leeseunghun03' },
-    { name: '이지행', part: 'Hardware Design', captain: true },
+  { team: "Intelligence Robot Team", photos: [i5], members: [
+    { name: "이명진", label: "17기(22)", part: "Software Engineer", github: "mjlee111", photo: i6, captain: true },
+    { name: "이민석", label: "17기(22)", part: "Software Engineer", github: "minseokle", photo: i7 },
+    { name: "이승훈", label: "17기(22)", part: "Software Engineer", github: "Leeseunghun03", photo: i8 },
+    { name: "이지행", label: "17기(22)", part: "Hardware Design", photo: i9 },
   ]},
 ]} />

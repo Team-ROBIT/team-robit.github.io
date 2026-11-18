@@ -4,16 +4,21 @@ description: "2021년 활동한 16기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-16-team-1.webp';
+import i2 from '../../../assets/assets_members/members-16-team-2.webp';
+import i3 from '../../../assets/assets_members/members-16-captain-3.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '고준호' },
-    { name: '권용연' },
-    { name: '박지훈', captain: true },
-    { name: '조동희' },
+<MemberRoster
+  captain={{ name: "박지훈", heading: 'RO:BIT 16th Captain', photos: [i3] }}
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "고준호", label: "16기(21)" },
+    { name: "권용연", label: "16기(21)" },
+    { name: "박지훈", label: "16기(21)", captain: true },
+    { name: "조동희", label: "16기(21)" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '백인엽' },
-    { name: '백종욱' },
+  { team: "Intelligent Robot Team", photos: [i2], members: [
+    { name: "백인엽", label: "16기(21)" },
+    { name: "백종욱", label: "16기(21)" },
   ]},
 ]} />

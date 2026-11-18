@@ -4,13 +4,20 @@ description: "2010년 활동한 5기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-5-captain-1.webp';
 
-<MemberRoster teams={[
-  { team: 'Members', members: [
-    { name: '오승준' },
-    { name: '오상훈', captain: true, note: '인터뷰 영상 있음' },
-    { name: '박영수' },
-    { name: '김민우' },
-    { name: '류일환', note: '인터뷰 있음' },
+<MemberRoster
+  captain={{ name: "오상훈", heading: 'RO:BIT 5th Captain', photos: [i1] }}
+  teams={[
+  { team: "Humanoid Team", photos: [], members: [
+  ]},
+  { team: "Intelligent Robot Team", photos: [], members: [
+  ]},
+  { team: "Battle Robot Team", photos: [], members: [
+    { name: "오승준", label: "5기(10)" },
+    { name: "오상훈", label: "5기(10)", interview: "https://www.youtube.com/watch?v=Ke3lD2IU7yM&feature=youtu.be", captain: true },
+    { name: "박영수", label: "5기(10)" },
+    { name: "김민우", label: "5기(10)" },
+    { name: "류일환", label: "5기(10)", interview: "https://www.facebook.com/kwrobit/photos/pcb.5000869953281426/5000869386614816" },
   ]},
 ]} />

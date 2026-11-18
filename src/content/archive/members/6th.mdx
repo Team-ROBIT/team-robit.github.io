@@ -4,18 +4,21 @@ description: "2011년 활동한 6기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-6-captain-1.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '박동호' },
-    { name: '김찬규' },
-    { name: '김찬주' },
+<MemberRoster
+  captain={{ name: "라용호", heading: 'RO:BIT 6th Captain', photos: [i1] }}
+  teams={[
+  { team: "Humanoid Team", photos: [], members: [
+    { name: "박동호", label: "6기(11)" },
+    { name: "김찬규", label: "6기(11)" },
+    { name: "김찬주", label: "6기(11)" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '라용호', captain: true },
-    { name: '유백운' },
+  { team: "Intelligent Robot Team", photos: [], members: [
+    { name: "라용호", label: "6기(11)", captain: true },
+    { name: "유백운", label: "6기(11)" },
   ]},
-  { team: 'Battle Robot Team', members: [
-    { name: '김관수', note: '인터뷰 영상 있음' },
+  { team: "Battle Robot Team", photos: [], members: [
+    { name: "김관수", label: "6기(11)", interview: "https://www.youtube.com/watch?v=BorSolpb4Ig" },
   ]},
 ]} />

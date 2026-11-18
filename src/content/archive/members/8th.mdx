@@ -4,18 +4,24 @@ description: "2013년 활동한 8기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-8-team-1.webp';
+import i2 from '../../../assets/assets_members/members-8-team-2.webp';
+import i3 from '../../../assets/assets_members/members-8-captain-3.webp';
+import i4 from '../../../assets/assets_members/members-8-captain-4.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '박소영' },
-    { name: '박정훈' },
-    { name: '정동규' },
-    { name: '조영신' },
+<MemberRoster
+  captain={{ name: "박수한", heading: 'RO:BIT 8th Captain', photos: [i3, i4], link: "https://www.kw.ac.kr/ko/life/newsletter.jsp?BoardMode=view&DUID=49635" }}
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "박소영", label: "8기(13)" },
+    { name: "박정훈", label: "8기(13)" },
+    { name: "정동규", label: "8기(13)" },
+    { name: "조영신", label: "8기(13)" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '김영대' },
-    { name: '박수한', captain: true, note: '인터뷰 있음' },
-    { name: '박찬호', note: '인터뷰 있음' },
-    { name: '황은솔' },
+  { team: "Intelligent Robot Team", photos: [i2], members: [
+    { name: "김영대", label: "8기(13)" },
+    { name: "박수한", label: "8기(13)", interview: "https://www.youtube.com/watch?v=EzffOK4UdhE", captain: true },
+    { name: "박찬호", label: "8기(13)", interview: "https://www.youtube.com/watch?v=bJJDVrhTZPA" },
+    { name: "황은솔", label: "8기(13)" },
   ]},
 ]} />

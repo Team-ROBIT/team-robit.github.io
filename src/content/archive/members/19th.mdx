@@ -4,17 +4,20 @@ description: "2024년부터 활동 중인 19기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-19-team-1.webp';
+import i2 from '../../../assets/assets_members/members-19-team-2.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '김근형', part: 'Computer Vision', github: 'kgh2005' },
-    { name: '구도연', part: 'Hardware Design', github: 'koodoyeon' },
-    { name: '노은강', part: 'Circuit Design', github: 'shdmsrkd' },
-    { name: '이원준', part: 'Humanoid Walking', github: 'WJJJ2004' },
+<MemberRoster
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "김근형", label: "19기(24)", part: "Computer Vision", github: "kgh2005" },
+    { name: "구도연", label: "19기(24)", part: "Hardware Design", github: "koodoyeon" },
+    { name: "노은강", label: "19기(24)", part: "Circuit Design", github: "shdmsrkd" },
+    { name: "이원준", label: "19기(24)", part: "Humanoid Walking", github: "WJJJ2004" },
   ]},
-  { team: 'Intelligence Robot Team', members: [
-    { name: '박기홍', part: 'Circuit Design', github: 'kinesis19' },
-    { name: '최범수', part: 'Computer Vision', github: 'beomsuchoi' },
-    { name: '하재민', part: 'Hardware Design', captain: true, github: 'jammay123' },
+  { team: "Intelligence Robot Team", photos: [i2], members: [
+    { name: "박기홍", label: "19기(24)", part: "Software Engineer", github: "kinesis19" },
+    { name: "최범수", label: "19기(24)", part: "Computer Vision", github: "beomsuchoi" },
+    { name: "하재민", label: "19기(24)", part: "Hardware Design", github: "jammay123", captain: true },
   ]},
 ]} />

@@ -4,26 +4,29 @@ description: "2006년 창단 멤버, 1기(1.5기 포함) 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-1-captain-1.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '표윤석', captain: true, note: '프로필 페이지 있음' },
-    { name: '이선우' },
-    { name: '이국선' },
-    { name: '이동훈' },
-    { name: '박은찬', note: '인터뷰 영상 있음' },
-    { name: '김은혜' },
+<MemberRoster
+  captain={{ name: "표윤석", heading: 'RO:BIT 1st Captain', photos: [i1], link: "https://sites.google.com/view/robitarchieve/members/graduated/1st-members/\uc774\uc2a4\ud130\uc5d0\uadf81" }}
+  teams={[
+  { team: "Humanoid Team", photos: [], members: [
+    { name: "이선우", label: "1기(02)" },
+    { name: "표윤석", label: "1기(02)", profile: '/members/1st-profile', captain: true },
+    { name: "이국선", label: "1기(03)" },
+    { name: "김은혜", label: "1기(04)" },
+    { name: "이동훈", label: "1기(06)" },
+    { name: "박은찬", label: "1기(06)", interview: "https://www.youtube.com/watch?v=NsJ6VEMyJ9Y" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '이대규' },
-    { name: '박수상' },
-    { name: '정은옥' },
+  { team: "Intelligent Robot Team", photos: [], members: [
+    { name: "이대규", label: "1기(02)" },
+    { name: "박수상", label: "1기(05)" },
+    { name: "정은옥", label: "1.5기(06)" },
   ]},
-  { team: 'Battle Robot Team', members: [
-    { name: '신봉구' },
-    { name: '김영석' },
-    { name: '최성열', note: '인터뷰 영상 있음' },
-    { name: '임종욱' },
-    { name: '오재욱' },
+  { team: "Battle Robot Team", photos: [], members: [
+    { name: "신봉구", label: "1기(00)" },
+    { name: "김영석", label: "1기(01)" },
+    { name: "최성열", label: "1기(03)", interview: "https://www.youtube.com/watch?v=l0SHlZ2hAEA" },
+    { name: "임종욱", label: "1기(05)" },
+    { name: "오재욱", label: "1기(06)" },
   ]},
 ]} />

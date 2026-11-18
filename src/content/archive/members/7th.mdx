@@ -4,15 +4,20 @@ description: "2012년 활동한 7기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-7-team-1.webp';
+import i2 from '../../../assets/assets_members/members-7-team-2.webp';
+import i3 from '../../../assets/assets_members/members-7-captain-3.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '권혁' },
-    { name: '박건우' },
-    { name: '원동규' },
+<MemberRoster
+  captain={{ name: "정의욱", heading: 'RO:BIT 7th Captain', photos: [i3] }}
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "권혁", label: "7기(12)" },
+    { name: "박건우", label: "7기(12)" },
+    { name: "원동규", label: "7기(12)" },
   ]},
-  { team: 'Intelligent & Battle Robot Team', members: [
-    { name: '정의욱', captain: true },
-    { name: '정승재' },
+  { team: "Intelligent&Battle Robot Team", photos: [i2], members: [
+    { name: "정의욱", label: "7기(12)", captain: true },
+    { name: "정승재", label: "7기(12)" },
   ]},
 ]} />

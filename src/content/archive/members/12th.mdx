@@ -4,18 +4,23 @@ description: "2017년 활동한 12기 단원 명단"
 sidebar: false
 ---
 import MemberRoster from '../../../components/MemberRoster.astro';
+import i1 from '../../../assets/assets_members/members-12-team-1.webp';
+import i2 from '../../../assets/assets_members/members-12-team-2.webp';
+import i3 from '../../../assets/assets_members/members-12-captain-3.webp';
 
-<MemberRoster teams={[
-  { team: 'Humanoid Team', members: [
-    { name: '김태겸' },
-    { name: '박채원' },
-    { name: '신주엽', captain: true },
-    { name: '이연서' },
+<MemberRoster
+  captain={{ name: "신주엽", heading: 'RO:BIT 12th Captain', photos: [i3] }}
+  teams={[
+  { team: "Humanoid Team", photos: [i1], members: [
+    { name: "김태겸", label: "12기(17)" },
+    { name: "박채원", label: "12기(17)" },
+    { name: "신주엽", label: "12기(17)", captain: true },
+    { name: "이연서", label: "12기(17)" },
   ]},
-  { team: 'Intelligent Robot Team', members: [
-    { name: '박민주' },
-    { name: '고주연' },
-    { name: '박가온' },
-    { name: '이혜성' },
+  { team: "Intelligent Robot Team", photos: [i2], members: [
+    { name: "박민주", label: "12기(17)" },
+    { name: "고주연", label: "12기(17)" },
+    { name: "박가온", label: "12기(17)" },
+    { name: "이혜성", label: "12기(17)" },
   ]},
 ]} />
