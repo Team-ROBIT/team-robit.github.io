@@ -1,5 +1,11 @@
 ---
 title: "국방로봇경진대회"
+description: "국방 무인 로봇 기술을 겨루는 경진대회"
+subtitle: "Defense Robot Competition"
+chips: ["2019 — 2026", "RMP-1", "방국 2세", "KUBO"]
+highlight: "2026 · 1위 · 산업통상부장관상"
+cover: ../../../assets/assets_contest/defense-robot-003.webp
+coverKind: cutout
 sidebar: false
 ---
 
@@ -17,25 +23,15 @@ sidebar: false
 
 ## ROBOT
 
-### RMP-1
-
-### 방국 2세
-
-### KUBO
+- **RMP-1** — 2019 한국지능로봇경진대회 · 국방로봇 부문
+- **방국 2세** — 2021 국방로봇경진대회
+- **KUBO** — 2022 국방로봇경진대회
 
 ![](../../../assets/assets_contest/defense-robot-001.webp)
 
 ![](../../../assets/assets_contest/defense-robot-002.webp)
 
 ![](../../../assets/assets_contest/defense-robot-003.webp)
-
-2019 한국지능로봇경진대회
-
-국방로봇 부문
-
-2021 국방로봇경진대회
-
-2022 국방로봇경진대회
 
 ## Technology
 

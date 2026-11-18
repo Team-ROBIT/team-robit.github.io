@@ -2,8 +2,8 @@
 title: "표윤석"
 description: "로빛 1기 주장 표윤석 프로필"
 sidebar: false
+subtitle: "RO:BIT 1st Captain"
 ---
-
 ## 이름: 표윤석
 
 **소속 및 직책**: 前 RO:BIT Humanoid Team, 1st Captain

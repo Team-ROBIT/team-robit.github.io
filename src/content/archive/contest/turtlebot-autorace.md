@@ -1,7 +1,14 @@
 ---
 title: "STEAM CUP TurtleBot AutoRace"
+description: "TurtleBot3 기반 자율주행 레이스 대회"
+subtitle: "TurtleBot3 AutoRace"
+chips: ["자율 주행", "차선 · 장애물 인식"]
+cover: ../../../assets/assets_contest/turtlebot-autorace-002.webp
+coverKind: photo
 sidebar: false
 ---
+
+## TurtleBot3 AutoRace
 
 -Robit Intelligent Robot Team-
 
@@ -11,17 +18,17 @@ Turtle Bot3 AutoRace 종목은 로보티즈에서 제공하는 터틀봇 플랫�
 
 ![](../../../assets/assets_contest/turtlebot-autorace-001.webp)
 
-<2019 Turtlebot3 Autorace Competition>
+2019 Turtlebot3 Autorace Competition
 
 ![](../../../assets/assets_contest/turtlebot-autorace-002.webp)
 
-<2022 Turtlebot3 Autorace Competition>
+2022 Turtlebot3 Autorace Competition
 
 ![](../../../assets/assets_contest/turtlebot-autorace-003.webp)
 
-<<2019 Robit Turtlebot3
+2019 Robit Turtlebot3 · 2022 Robit Turtlebot3
 
-2022 Robit Turtlebot3>>
+## Technology
 
 ![](../../../assets/assets_contest/turtlebot-autorace-004.webp)
 

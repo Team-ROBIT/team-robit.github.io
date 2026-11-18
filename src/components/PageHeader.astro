@@ -1,0 +1,41 @@
+---
+// 하위 페이지 상단: 경로 표기, 큰 제목, 영문 부제, 칩, 커버(누끼 로봇 또는 사진)
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  kicker?: string;
+  crumb?: string;
+  title: string;
+  subtitle?: string;
+  chips?: string[];
+  highlight?: string;
+  cover?: ImageMetadata;
+  coverKind?: 'cutout' | 'photo';
+}
+const { kicker, crumb, title, subtitle, chips = [], highlight, cover, coverKind = 'photo' } = Astro.props;
+---
+
+<section class="ph">
+  <div class:list={['wrap', !cover && 'one']}>
+    <div>
+      {(kicker || crumb) && (
+        <div class="crumb">{kicker} {crumb && <b>/ {crumb}</b>}</div>
+      )}
+      <h1><span class="l"><span>{title}</span></span></h1>
+      {subtitle && <div class="sub2">{subtitle}</div>}
+      {(chips.length > 0 || highlight) && (
+        <div class="chips">
+          {highlight && <span class="hl">{highlight}</span>}
+          {chips.map((c) => <span>{c}</span>)}
+        </div>
+      )}
+      {!chips.length && !highlight && <div class="chips" style="padding-bottom:56px"></div>}
+    </div>
+    {cover && (
+      <div class:list={['fig', coverKind === 'photo' && 'photo']}>
+        <Image src={cover} alt="" widths={[640, 960]} sizes="(max-width: 1000px) 90vw, 520px" loading="eager" />
+      </div>
+    )}
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+// 로봇 목록: 분류 필터 + 카드 (데이터: src/data/robots.json)
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import robots from '../data/robots.json';
+import alpha from '../data/alpha.json';
+
+const imgs = import.meta.glob<{ default: ImageMetadata }>('../assets/assets_robots/*.webp', { eager: true });
+const img = (stem: string) => imgs[`../assets/assets_robots/${stem}.webp`]?.default;
+const label: Record<string, string> = { humanoid: 'HUMANOID', battle: 'BATTLE', defense: 'DEFENSE · RESCUE', other: 'ETC' };
+const count = (c: string) => robots.filter((r) => r.cat === c).length;
+---
+
+<div class="fl">
+  <button class="on" data-f="all">전체 {robots.length}</button>
+  <button data-f="humanoid">Humanoid {count('humanoid')}</button>
+  <button data-f="battle">Battle {count('battle')}</button>
+  <button data-f="defense">Defense · Rescue {count('defense')}</button>
+  <button data-f="other">Service · 기타 {count('other')}</button>
+</div>
+
+<div class="rg">
+  {robots.map((r) => {
+    const main = img(r.images[0]);
+    const facts = Object.entries(r.facts);
+    return (
+      <article class="rc" data-t={r.cat}>
+        <div class="im">
+          <span class="ty">{label[r.cat]}</span>
+          {main && <Image class={alpha.includes(r.images[0]) ? 'al' : ''} src={main} alt={r.name} width={640} loading="lazy" />}
+        </div>
+        <div class="tx">
+          <h4>{r.name}</h4>
+          <p class="ty2">{r.type}</p>
+          {r.desc.map((d) => <p>{d}</p>)}
+          {facts.length > 0 && (
+            <div class="sp">{facts.map(([k, v]) => <div><b>{v}</b>{k}</div>)}</div>
+          )}
+          {r.results.length > 0 && (
+            <ul class="res">{r.results.map((x) => <li>{x}</li>)}</ul>
+          )}
+          {r.images.length > 1 && (
+            <div class="more">{r.images.slice(1).map((s) => img(s) && <Image src={img(s)} alt={`${r.name} 추가 사진`} width={240} loading="lazy" />)}</div>
+          )}
+        </div>
+      </article>
+    );
+  })}
+</div>

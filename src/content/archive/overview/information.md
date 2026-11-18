@@ -2,7 +2,11 @@
 title: "로빛 소개"
 description: "원본 아카이브의 Information 페이지"
 order: 4
+subtitle: "About ROːBIT"
+highlight: "2006.11.01 창단"
+chips: ["국내 최초 로봇 스포츠 게임단", "광운대학교"]
 ---
+
 
 광운대학교 로봇게임단 로빛의 역사를 기록하고 업적을 기념하기 위해 시작된 로빛 창단 16주년 기념 프로젝트입니다.
 
@@ -13,10 +17,6 @@ order: 4
 ### 광운대학교 교육이념인 참빛을 합성해 탄생한
 
 ### 국내 최초 로봇 스포츠게임단입니다.
-
-![](../../../assets/assets_overview/information-001.webp)
-
-![](../../../assets/assets_overview/information-002.webp)
 
 ![](../../../assets/assets_overview/information-003.webp)
 
@@ -30,8 +30,6 @@ order: 4
 
 ### 팀워크를 다지며 함께 성장합니다.
 
-![](../../../assets/assets_overview/information-004.webp)
-
 ![](../../../assets/assets_overview/information-005.webp)
 
 ### 로빛은 개발한 로봇들로 국내외 다양한 대회에 참가해
@@ -41,8 +39,6 @@ order: 4
 ### 알리기 위해 노력하고 있습니다.
 
 [▶ contest](/contest/participation)
-
-![](../../../assets/assets_overview/information-006.webp)
 
 ![](../../../assets/assets_overview/information-007.webp)
 

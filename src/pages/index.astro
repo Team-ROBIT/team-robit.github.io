@@ -1,87 +1,104 @@
 ---
-// src/pages/index.astro
+// 홈: 히어로 · 마퀴 · 최근 성적표 · 하이라이트 연표 · 섹션 타일 · 숫자 띠
 import { Image } from 'astro:assets';
-import DocsLayout from '../layouts/DocsLayout.astro';
-import logoCircle from '../assets/robit_logo_kw_circle.png';
-import imgContest from '../assets/assets_contest/contest-robocup-rescue-main.webp';
-import imgRobots from '../assets/assets_contest/robot-robocup-rescue-2024.webp';
-import imgPeople from '../assets/assets_contest/team-src-irc.webp';
-import imgEvents from '../assets/assets_contest/contest-extreme-main.webp';
-import imgArticles from '../assets/assets_contest/contest-ebs-humanoid.webp';
-import imgHistory from '../assets/assets_contest/robot-robocup-humanoid.webp';
-import imgContact from '../assets/assets_contest/team-robocup-rescue.webp';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { marquee, latest, timeline, stats } from '../data/home';
+import team from '../assets/assets_contest/team-robocup-humanoid.webp';
+import tank from '../assets/assets_contest/defense-robot-003.webp';
+import tank1 from '../assets/assets_contest/defense-robot-001.webp';
+import podium from '../assets/assets_awards/awards-2018-004.webp';
+import banner from '../assets/assets_awards/awards-2016-002.webp';
+import team18 from '../assets/assets_members/members-18-team-1.webp';
+import team19 from '../assets/assets_members/members-19-team-1.webp';
+import crowd from '../assets/assets_events/event-001.webp';
+import invite from '../assets/assets_events/event-046.webp';
+import overview from '../assets/assets_awards/awards-2022-008.webp';
+import robot from '../assets/assets_robots/robots-list-002.webp';
 
-const cards = [
-	{ title: 'Overview', desc: "팀의 정의, 'RO:BIT' 이름의 의미, 2006년 창단 이후 역사.", href: '/overview/welcome', image: logoCircle, contain: true },
-	{ title: 'Contest', desc: '로보컵·SRC IRC 등 국내외 대회 참가 기록과 수상 실적.', href: '/contest/participation', image: imgContest },
-	{ title: 'Our Robots', desc: '휴머노이드부터 재난구조 로봇까지, 역대 개발 로봇 제원.', href: '#', image: imgRobots },
-	{ title: 'People', desc: '1기부터 20기까지, 졸업·현역 단원 소개.', href: '/members/roster', image: imgPeople },
-	{ title: 'Events', desc: '지역 축제 참여 등 로봇 대중화를 위한 대외 활동 기록.', href: '/events/participation', image: imgEvents },
-	{ title: 'Articles', desc: '방송 출연 및 언론 보도 자료 모음.', href: '/articles/press', image: imgArticles },
-	{ title: 'History & Archive', desc: '창단 16주년 기념으로 시작된 아카이브 프로젝트 소개.', href: '/overview/history', image: imgHistory },
-	{ title: 'Contact', desc: '로빛에 대해 궁금한 점이 있다면 문의해주세요.', href: '#', image: imgContact },
-];
+const timeImg: Record<string, any> = { robot, banner, podium, team18, team19 };
+const mq = [...marquee, ...marquee];
 ---
 
-<DocsLayout title="Welcome to ROːBIT Archive" isDocs={false} hideHeader={true}>
-	<section class="relative -mx-6 md:-mx-12 mb-14 px-6 md:px-12 py-16 text-center overflow-hidden rounded-b-[2rem] dotgrid">
-		<div class="relative z-10">
-			<h1 class="font-display font-black uppercase tracking-tight text-5xl sm:text-6xl text-zinc-900 dark:text-zinc-50">
-				RO<span class="text-brand dark:text-brand-light">:</span>BIT Archive
-			</h1>
-			<p class="mt-4 text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">
-				2006년 창단, 광운대학교 학생자치기구 국내 최초 로봇 스포츠 게임단. 대회 기록부터 로봇 제원까지, 로빛의 모든 자료를 한곳에서.
-			</p>
-		</div>
-	</section>
+<BaseLayout title="ROːBIT Archive">
+  <section class="hero">
+    <div class="mesh"></div><div class="band"></div><div class="band b2"></div>
+    <div class="wrap">
+      <div>
+        <span class="pill"><i></i>ROBOT SPORT GAME TEAM · SINCE 2006</span>
+        <h1><span class="l"><span>로봇으로 겨루고,</span></span><span class="l"><span><mark>기록</mark>으로 남긴다.</span></span></h1>
+        <p class="lead">광운대학교 로봇게임단 로빛의 20년. 295회의 수상, 20기에 걸친 단원, 수십 대의 로봇이 남긴 기록을 한곳에서 찾아보세요.</p>
+        <div class="acts">
+          <a class="b p" href="/contest/participation">아카이브 둘러보기 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"></path></svg></a>
+          <a class="b s" href="/contest/awards">수상 내역</a>
+        </div>
+      </div>
+      <div class="stage" id="stage">
+        <div class="frame" id="frame"><Image src={team} alt="RO:BIT 단원들과 로봇" width={1000} loading="eager" /></div>
+        <Image class="cutout" src={tank} alt="" width={520} loading="eager" />
+        <div class="stamp">
+          <svg viewBox="0 0 116 116" aria-hidden="true"><defs><path id="c" d="M58,58 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"></path></defs><text font-size="9.4" font-weight="700" letter-spacing="2.7" fill="#fff" font-family="Archivo,sans-serif"><textPath href="#c">SINCE 2006 · KWANGWOON UNIV. ·</textPath></text></svg>
+          <b>20Y</b>
+        </div>
+        <div class="float f1"><small>LATEST</small><b>2026 국방로봇 <em>1위</em></b></div>
+        <div class="float f2"><small>AWARDS</small><b><em>295</em>회 수상</b></div>
+      </div>
+    </div>
+  </section>
 
-	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-		{cards.map((card) => (
-			<a href={card.href} class="group rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden hover:border-brand dark:hover:border-brand-light transition-colors">
-				<div class={`aspect-4/3 overflow-hidden flex items-center justify-center ${card.contain ? 'bg-brand/10 dark:bg-brand-light/10' : 'bg-zinc-100 dark:bg-zinc-800'}`}>
-					<Image
-						src={card.image}
-						alt={card.title}
-						class={card.contain ? 'w-1/2 h-1/2 object-contain' : 'w-full h-full object-cover'}
-					/>
-				</div>
-				<div class="p-5">
-					<h3 class="font-bold text-lg mb-2">{card.title}</h3>
-					<p class="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed mb-3">{card.desc}</p>
-					<span class="text-sm font-bold text-brand dark:text-brand-light">
-						{card.href === '#' ? '준비 중' : '둘러보기 →'}
-					</span>
-				</div>
-			</a>
-		))}
-	</div>
+  <div class="mq" aria-hidden="true"><div class="t">{mq.map((t, i) => <span class={i % 2 ? 'o' : ''}>{t}</span>)}</div></div>
 
-	<div class="mt-16 flex flex-wrap justify-center gap-3">
-		<a href="https://github.com/team-robit" target="_blank" class="flex items-center gap-2 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-2 text-sm font-semibold hover:border-brand dark:hover:border-brand-light transition-colors">
-			GitHub
-		</a>
-		<a href="https://www.kw.ac.kr" target="_blank" class="flex items-center gap-2 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-2 text-sm font-semibold hover:border-brand dark:hover:border-brand-light transition-colors">
-			광운대학교
-		</a>
-	</div>
-</DocsLayout>
+  <section class="sec">
+    <div class="wrap">
+      <div class="hd rv"><h2>최근 <em>성적표</em></h2><p>가장 최근 대회 결과입니다. 행 위에 마우스를 올려 보세요.</p></div>
+      <div class="sb rv">
+        {latest.map((r) => (
+          <a class="sr" href="/contest/awards">
+            <span class="y">{r.year}</span>
+            <span class="n">{r.name}<small>{r.en}</small></span>
+            <span class="a">{r.org}</span>
+            <span class:list={['rk', r.gold && 'g']}>{r.rank}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 
-<style>
-	.dotgrid {
-		background-image: radial-gradient(circle, color-mix(in srgb, currentColor 14%, transparent) 1px, transparent 1px);
-		background-size: 22px 22px;
-		color: var(--color-zinc-400);
-	}
-	.dotgrid::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: radial-gradient(circle at 50% 10%, color-mix(in srgb, var(--color-brand) 16%, transparent), transparent 62%);
-		pointer-events: none;
-	}
-	@media (prefers-color-scheme: dark) {
-		.dotgrid {
-			color: var(--color-zinc-700);
-		}
-	}
-</style>
+  <section class="sec">
+    <div class="wrap">
+      <div class="hd rv"><h2>하이라이트 <em>연표</em></h2><p>해마다 로빛이 남긴 가장 큰 성과가 이어집니다.</p></div>
+      <div class="tl">
+        {timeline.map((e) => (
+          <div class="ev rv">
+            <div class="y">{e.year}</div>
+            <div class="c">
+              <div><small>{e.tag}</small><h3>{e.title}</h3><p>{e.text}</p></div>
+              <div class="im"><Image src={timeImg[e.img]} alt="" width={420} loading="lazy" style={e.img === 'robot' ? 'object-fit:contain;mix-blend-mode:multiply' : undefined} /></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="hd rv"><h2>기록을 <em>탐색</em>하기</h2><p>위 메뉴에 마우스를 올리면 하위 목록이 바로 펼쳐집니다.</p></div>
+      <div class="tiles rv">
+        <a class="tile" href="/contest/participation"><Image src={podium} alt="" width={900} loading="lazy" /><span class="num">02 / CONTEST</span><div><h3>Contest</h3><p>국내외 대회 참가 기록과 수상 내역</p></div></a>
+        <a class="tile" href="/members/roster"><Image src={team18} alt="" width={700} loading="lazy" /><span class="num">06 / PEOPLE</span><div><h3>People</h3><p>1기부터 20기까지</p></div></a>
+        <a class="tile" href="/events/participation"><Image src={crowd} alt="" width={640} loading="lazy" /><span class="num">03 / EVENTS</span><div><h3>Events</h3><p>전시·체험 행사 16건</p></div></a>
+        <a class="tile cut" href="/robots/list"><Image src={tank1} alt="" width={640} loading="lazy" /><span class="num">05 / ROBOTS</span><div><h3>Robots</h3></div></a>
+        <a class="tile" href="/articles/press"><Image src={invite} alt="" width={640} loading="lazy" /><span class="num">04 / ARTICLES</span><div><h3>Articles</h3><p>기사 스캔 74건</p></div></a>
+        <a class="tile" href="/overview/information"><Image src={overview} alt="" width={800} loading="lazy" /><span class="num">01 / OVERVIEW</span><div><h3>Overview</h3><p>이름의 의미와 창단 역사</p></div></a>
+        <a class="tile" href="/contact/contact"><Image src={team19} alt="" width={800} loading="lazy" /><span class="num">07 / CONTACT</span><div><h3>Contact</h3><p>Instagram · YouTube · 이메일</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap">
+      {stats.map((s) => <div class="c"><div class="n" data-c={s.n}>{s.n}</div><div class="l">{s.label}</div></div>)}
+    </div>
+  </section>
+  <div style="height:120px"></div>
+</BaseLayout>
