@@ -1,7 +1,9 @@
 // 사이트 전체 내비게이션 정의 (헤더 메가메뉴, 모바일 메뉴, 푸터, 페이지 경로 표기에 공통으로 사용)
 import type { ImageMetadata } from 'astro';
 import team from '../assets/assets_contest/team-robocup-humanoid.webp';
-import rescue from '../assets/assets_contest/robot-robocup-rescue-2024.webp';
+import rescue from '../assets/assets_contest/eclipse-2026-rescue.webp';
+import safelab from '../assets/assets_contest/safelab-2026-gripper.webp';
+import eclipseDefense from '../assets/assets_contest/eclipse-2026-defense.webp';
 import srcirc from '../assets/assets_contest/team-src-irc.webp';
 import tank from '../assets/assets_contest/defense-robot-003.webp';
 import podium from '../assets/assets_awards/awards-2018-004.webp';
@@ -33,9 +35,9 @@ export const sections: NavSection[] = [
       { label: 'RoboCup Humanoid', href: '/contest/robocup-humanoid', meta: 'Soccer', image: team },
       { label: 'RoboCup Rescue', href: '/contest/robocup-rescue', meta: 'Rescue', image: rescue },
       { label: 'SRCIRC 휴머노이드', href: '/contest/src-irc-humanoid', meta: 'Humanoid', image: srcirc },
-      { label: '국방로봇경진대회', href: '/contest/defense-robot', meta: 'Defense', image: tank },
-      { label: '씨름로봇 · TurtleBot', href: '/contest/ssireum', meta: 'SRC·IRC', image: tank1 },
-      { label: 'EBS 로봇파워', href: '/contest/robotpower-battle', meta: 'Battle', image: banner },
+      { label: 'IRC 매니퓰레이터 · SAFE LAB', href: '/contest/irc-manipulator', meta: '2026', image: safelab },
+      { label: '국방로봇경진대회', href: '/contest/defense-robot', meta: 'Defense', image: eclipseDefense },
+      { label: '극한로봇경진대회', href: '/contest/extreme-robot', meta: 'Extreme', image: rescue },
       { label: '수상 내역', href: '/contest/awards', meta: '295', image: podium },
     ],
   },

@@ -46,3 +46,7 @@
 .doc iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:18px}
 .doc>p code,.doc li code{font-size:.9em;background:var(--blush);padding:2px 7px;border-radius:6px}
 @media(max-width:1000px){.doc{font-size:16px}.doc>h2{margin-top:2.4em}.doc>table{display:block;overflow-x:auto}}
+
+/* 이미지에 링크를 건 문단(영상 썸네일 등) */
+.doc>p>a>img:only-child{display:block;width:100%;max-height:none;aspect-ratio:16/9;object-fit:cover;border-radius:18px;box-shadow:0 26px 40px -30px rgba(122,34,51,.5);transition:transform .5s}
+.doc>p>a:hover>img:only-child{transform:scale(1.01)}
