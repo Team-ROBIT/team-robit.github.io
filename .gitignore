@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # original Google Sites raw snapshot (backup working data)
 _backup/
+
+# python bytecode
+__pycache__/
