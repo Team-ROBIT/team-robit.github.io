@@ -1,27 +1,25 @@
 /* Markdown / MDX 본문(.doc) 스타일.
    마크다운으로 쓴 요소(.doc 의 직계 자식)에만 적용해서, 본문 안에 들어간 컴포넌트(멤버 카드 등)의 스타일을 덮어쓰지 않는다. */
-.doc{font-size:16.5px;line-height:1.85;color:#3a3340;counter-reset:h2;word-break:keep-all}
-.doc>*+*{margin-top:1.15em}
-.doc>h2{counter-increment:h2;display:flex;align-items:baseline;gap:18px;font-weight:800;font-size:clamp(30px,3.6vw,46px);letter-spacing:-.05em;line-height:1.15;color:var(--ink);margin-top:3em;scroll-margin-top:150px}
-.doc>h2::before{content:counter(h2,decimal-leading-zero);font:italic 900 .5em var(--disp);background:var(--grad);-webkit-background-clip:text;color:transparent;flex:none}
+.doc{font-size:16px;line-height:1.85;color:#3a3340;word-break:keep-all}
+.doc>*+*{margin-top:1em}
+.doc>h2{font-weight:800;font-size:28px;letter-spacing:-.04em;line-height:1.3;color:var(--ink);margin-top:56px;scroll-margin-top:84px}
 .doc>h2:first-child{margin-top:0}
-.doc>h3{display:flex;gap:10px;align-items:center;font-size:21px;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin-top:2em;scroll-margin-top:150px}
-.doc>h3::before{content:"";width:22px;height:8px;border-radius:4px;background:var(--grad);flex:none}
-.doc>h4{font-size:17px;font-weight:800;color:var(--ink);margin-top:1.6em}
+.doc>h3{display:flex;gap:10px;align-items:center;font-size:17px;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-top:28px;scroll-margin-top:84px}
+.doc>h3::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--coral);transform:rotate(45deg);flex:none}
+.doc>h4{font-size:15.5px;font-weight:700;color:var(--ink);margin-top:1.4em}
 .doc>p,.doc>ul,.doc>ol{color:#3a3340}
 .doc strong{color:var(--ink);font-weight:800}
-.doc>p a,.doc li a,.doc td a,.doc summary a{color:var(--maroon);font-weight:600;text-decoration:underline;text-decoration-color:#f0c6c9;text-underline-offset:4px;transition:text-decoration-color .25s}
+.doc>p a,.doc li a,.doc td a,.doc summary a{color:var(--maroon);font-weight:600;text-decoration:underline;text-decoration-color:#efc9cd;text-underline-offset:4px;transition:text-decoration-color .25s}
 .doc>p a:hover,.doc li a:hover,.doc td a:hover{text-decoration-color:var(--maroon)}
-.doc>ul,.doc>ol{padding:0;list-style:none;border-bottom:1px solid var(--line)}
-.doc>ul li,.doc>ol li{position:relative;padding:11px 0 11px 28px;border-top:1px solid var(--line);transition:transform .3s}
-.doc>ul li:hover,.doc>ol li:hover{transform:translateX(6px)}
-.doc>ul li::before{content:"";position:absolute;left:4px;top:1.15em;width:9px;height:9px;border-radius:50%;border:2px solid var(--coral)}
-.doc>ol{counter-reset:ol}.doc>ol>li{counter-increment:ol}.doc>ol>li::before{content:counter(ol);position:absolute;left:0;top:11px;font:italic 900 15px var(--disp);color:var(--maroon)}
-.doc li ul,.doc li ol{margin-top:6px;padding:0;list-style:none}
-.doc>blockquote{padding:6px 0 6px 26px;position:relative;font-size:19px;line-height:1.75;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
-.doc>blockquote::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:8px;background:var(--grad);transform:skewX(-11deg)}
+.doc>ul,.doc>ol{padding:0;list-style:none;display:grid;gap:10px}
+.doc>ul>li,.doc>ol>li{position:relative;border:1px solid var(--line);border-left:3px solid var(--maroon);background:#fff;border-radius:12px;padding:14px 20px;font-size:15px;line-height:1.75;transition:transform .3s,box-shadow .3s}
+.doc>ul>li:hover,.doc>ol>li:hover{transform:translateX(6px);box-shadow:0 14px 26px -18px rgba(122,34,51,.5)}
+.doc>ol{counter-reset:ol}.doc>ol>li{counter-increment:ol;padding-left:52px}.doc>ol>li::before{content:counter(ol,decimal-leading-zero);position:absolute;left:18px;top:14px;font:500 12px var(--mono);color:var(--maroon);line-height:2.1}
+.doc li ul,.doc li ol{margin-top:6px;padding:0 0 0 18px;list-style:disc;font-size:14.5px;color:#4f4754}
+.doc>blockquote{padding:6px 0 6px 22px;position:relative;font-size:18px;line-height:1.75;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.doc>blockquote::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:4px;border-radius:2px;background:var(--grad)}
 .doc>hr{border:0;height:1px;background:var(--line);margin:3em 0}
-.doc>p>img,.doc .gallery img,.doc>details img{border-radius:18px;background:#f3eeef;max-width:100%;height:auto}
+.doc>p>img,.doc .gallery img,.doc>details img{border-radius:14px;background:#f3eeef;max-width:100%;height:auto}
 .doc>p:has(>img:only-child){line-height:0}
 .doc>p>img:only-child{display:block;max-height:560px;width:auto;margin:0 auto;box-shadow:0 26px 40px -30px rgba(122,34,51,.5)}
 .doc .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:1.4em}
@@ -29,7 +27,7 @@
 .doc .gallery img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;box-shadow:none;transition:transform .8s cubic-bezier(.2,.8,.2,1);display:block}
 .doc .gallery>p:hover img{transform:scale(1.07)}
 .doc>table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:15px}
-.doc>table th{background:var(--blush);color:var(--maroon);font-weight:800;text-align:left;padding:12px 16px;font-size:13px;letter-spacing:.04em}
+.doc>table{background:#fff}.doc>table th{background:var(--blush);color:var(--maroon);font-weight:800;text-align:left;padding:12px 16px;font-size:13px;letter-spacing:.04em}
 .doc>table td{padding:12px 16px;border-top:1px solid var(--line)}
 .doc>table tr:hover td{background:#fffaf8}
 .doc>details{border:1px solid var(--line);border-radius:20px;background:#fff;overflow:hidden}
@@ -50,3 +48,35 @@
 /* 이미지에 링크를 건 문단(영상 썸네일 등) */
 .doc>p>a>img:only-child{display:block;width:100%;max-height:none;aspect-ratio:16/9;object-fit:cover;border-radius:18px;box-shadow:0 26px 40px -30px rgba(122,34,51,.5);transition:transform .5s}
 .doc>p>a:hover>img:only-child{transform:scale(1.01)}
+
+/* 이미지 캡션(figure) 과 "대회 현장" 큰 사진 배치 */
+.doc>figure{margin-top:1.4em}
+.doc>figure>p{line-height:0}
+.doc>figure>p>img{display:block;max-height:560px;width:auto;max-width:100%;margin:0 auto;border-radius:18px;box-shadow:0 26px 40px -30px rgba(122,34,51,.5)}
+.doc figcaption{font-size:13px;line-height:1.6;color:var(--mute);text-align:center;padding:10px 6px 0}
+.doc .gallery>figure{margin:0}
+.doc .gallery>figure>p{margin:0;line-height:0;overflow:hidden;border-radius:16px}
+.doc .gallery>figure>p img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.doc .gallery>figure:hover>p img{transform:scale(1.06)}
+.doc .gallery.feature{grid-template-columns:repeat(4,1fr)}
+.doc .gallery.feature>figure:first-child{grid-column:span 2;grid-row:span 2}
+.doc .gallery.feature>figure:first-child>p,.doc .gallery.feature>figure:first-child>p img{height:100%}
+.doc .gallery.feature>figure:first-child>p img{aspect-ratio:auto}
+.doc .gallery.feature>p:first-child{grid-column:span 2;grid-row:span 2}
+.doc .gallery.feature>p:first-child img{height:100%;aspect-ratio:auto}
+@media(max-width:1000px){.doc .gallery.feature{grid-template-columns:repeat(2,1fr)}}
+.doc .gallery.n5{grid-template-columns:repeat(6,1fr)}
+.doc .gallery.n5>*{grid-column:span 2}
+.doc .gallery.n5>*:nth-child(n+4){grid-column:span 3}
+@media(max-width:700px){.doc .gallery.n5{grid-template-columns:repeat(2,1fr)}.doc .gallery.n5>*,.doc .gallery.n5>*:nth-child(n+4){grid-column:auto}}
+
+/* 설명이 달린 카드 갤러리 (센서·부품 소개 등): 흰 배경 사진 + 제목/설명 */
+.doc .gallery.cards{grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+.doc .gallery.cards>figure{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .35s,box-shadow .35s}
+.doc .gallery.cards>figure:hover{transform:translateY(-5px);box-shadow:0 22px 34px -24px rgba(20,22,26,.45)}
+.doc .gallery.cards>figure>p{border-radius:0;background:#fff}
+.doc .gallery.cards>figure>p img{aspect-ratio:1;object-fit:contain;padding:22px;border-radius:0;background:#fff}
+.doc .gallery.cards>figure:hover>p img{transform:scale(1.04)}
+.doc .gallery.cards figcaption{text-align:left;border-top:1px solid var(--line);padding:16px 18px 20px;font-size:13.5px;line-height:1.7;color:var(--mute);flex:1}
+.doc .gallery.cards figcaption b{display:block;font-size:15.5px;color:var(--ink);margin-bottom:6px;letter-spacing:-.02em}
+@media(max-width:700px){.doc .gallery.cards{grid-template-columns:1fr}}

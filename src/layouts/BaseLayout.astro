@@ -1,6 +1,7 @@
 ---
-// 모든 페이지의 공통 틀: <head>, 헤더(메가메뉴), 푸터, 공통 스크립트
-import Header from '../components/Header.astro';
+// 모든 페이지의 공통 틀(설계도 레이아웃): <head>, 왼쪽 사이드바, 상단 바, 푸터, 공통 스크립트
+import SideNav from '../components/SideNav.astro';
+import TopBar from '../components/TopBar.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
@@ -26,14 +27,18 @@ const fullTitle = title === 'ROːBIT Archive' ? title : `${title} | ROːBIT Arch
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
     <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
     <title>{fullTitle}</title>
   </head>
   <body>
-    <Header />
-    <main><slot /></main>
-    <Footer />
+    <div class="prog" id="prog"></div>
+    <SideNav />
+    <main>
+      <TopBar />
+      <slot />
+      <Footer />
+    </main>
     <script>
       import '../scripts/site.js';
     </script>

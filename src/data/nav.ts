@@ -1,73 +1,68 @@
-// 사이트 전체 내비게이션 정의 (헤더 메가메뉴, 모바일 메뉴, 푸터, 페이지 경로 표기에 공통으로 사용)
-import type { ImageMetadata } from 'astro';
-import team from '../assets/assets_contest/team-robocup-humanoid.webp';
-import rescue from '../assets/assets_contest/eclipse-2026-rescue.webp';
-import safelab from '../assets/assets_contest/safelab-2026-gripper.webp';
-import eclipseDefense from '../assets/assets_contest/eclipse-2026-defense.webp';
-import srcirc from '../assets/assets_contest/team-src-irc.webp';
-import tank from '../assets/assets_contest/defense-robot-003.webp';
-import podium from '../assets/assets_awards/awards-2018-004.webp';
-import banner from '../assets/assets_awards/awards-2016-002.webp';
-import crowd from '../assets/assets_events/event-001.webp';
-import invite from '../assets/assets_events/event-046.webp';
-import team18 from '../assets/assets_members/members-18-team-1.webp';
-import team19 from '../assets/assets_members/members-19-team-1.webp';
-import team2 from '../assets/assets_awards/awards-2022-008.webp';
-import tank1 from '../assets/assets_contest/defense-robot-001.webp';
+// 사이트 내비게이션 정의: 왼쪽 사이드바, 모바일 메뉴, 검색, 페이지 경로 표기에 공통으로 사용한다.
+export interface NavSub { label: string; href: string }
+export interface NavLink { no: string; label: string; href: string; count?: string; /** 이 링크가 "현재 위치"로 잡히는 경로 접두어 */ match: string[]; sub?: NavSub[] }
+export interface NavGroup { title: string; links: NavLink[] }
 
-export interface NavItem { label: string; href: string; meta?: string; image: ImageMetadata }
-export interface NavSection { key: string; label: string; en: string; href: string; desc: string; items: NavItem[] }
-
-export const sections: NavSection[] = [
+export const groups: NavGroup[] = [
   {
-    key: 'overview', label: 'Overview', en: 'OVERVIEW · 소개', href: '/overview/information',
-    desc: '이름의 의미와 창단 역사, 로빛이 하는 일을 소개합니다.',
-    items: [
-      { label: '로빛 소개', href: '/overview/information', meta: 'About', image: team2 },
-      { label: 'History & Archive', href: '/overview/history', meta: '2006—', image: podium },
+    title: 'OVERVIEW',
+    links: [
+      { no: '00', label: '홈', href: '/', match: ['/'] },
+      { no: '01', label: '로빛 소개', href: '/overview/information', match: ['/overview/information'] },
+      { no: '02', label: 'History & Archive', href: '/overview/history', match: ['/overview/history'] },
     ],
   },
   {
-    key: 'contest', label: 'Contest', en: 'CONTEST · 대회', href: '/contest/participation',
-    desc: 'RoboCup, SRC·IRC, 국방로봇경진대회 등 로빛이 참가한 국내외 대회의 기록입니다.',
-    items: [
-      { label: '참여 대회 전체', href: '/contest/participation', meta: '8종', image: podium },
-      { label: 'RoboCup Humanoid', href: '/contest/robocup-humanoid', meta: 'Soccer', image: team },
-      { label: 'RoboCup Rescue', href: '/contest/robocup-rescue', meta: 'Rescue', image: rescue },
-      { label: 'SRCIRC 휴머노이드', href: '/contest/src-irc-humanoid', meta: 'Humanoid', image: srcirc },
-      { label: 'IRC 매니퓰레이터 · SAFE LAB', href: '/contest/irc-manipulator', meta: '2026', image: safelab },
-      { label: '국방로봇경진대회', href: '/contest/defense-robot', meta: 'Defense', image: eclipseDefense },
-      { label: '극한로봇경진대회', href: '/contest/extreme-robot', meta: 'Extreme', image: rescue },
-      { label: '수상 내역', href: '/contest/awards', meta: '295', image: podium },
+    title: 'RECORDS',
+    links: [
+      {
+        no: '03', label: '대회', href: '/contest/participation', count: '10',
+        match: ['/contest/participation', '/contest/robocup', '/contest/src-irc', '/contest/irc-', '/contest/defense', '/contest/extreme', '/contest/ssireum', '/contest/turtlebot', '/contest/robotpower'],
+        sub: [
+          { label: 'RoboCup Humanoid', href: '/contest/robocup-humanoid' },
+          { label: 'RoboCup Rescue', href: '/contest/robocup-rescue' },
+          { label: 'SRCIRC 휴머노이드', href: '/contest/src-irc-humanoid' },
+          { label: 'IRC 매니퓰레이터', href: '/contest/irc-manipulator' },
+          { label: '국방로봇경진대회', href: '/contest/defense-robot' },
+          { label: '극한로봇경진대회', href: '/contest/extreme-robot' },
+          { label: '씨름로봇', href: '/contest/ssireum' },
+          { label: 'TurtleBot AutoRace', href: '/contest/turtlebot-autorace' },
+        ],
+      },
+      { no: '04', label: '수상 내역', href: '/contest/awards', count: '295', match: ['/contest/awards'] },
+      { no: '05', label: '행사', href: '/events/participation', count: '16', match: ['/events/participation'] },
+      { no: '06', label: '기사 · 방송', href: '/articles/press', count: '74', match: ['/articles/press', '/events/broadcast'] },
     ],
   },
   {
-    key: 'records', label: 'Records', en: 'RECORDS · 기록', href: '/events/participation',
-    desc: '행사와 방송, 기사 스캔까지 로빛의 활동 기록을 모았습니다.',
-    items: [
-      { label: '참여 행사', href: '/events/participation', meta: '16', image: crowd },
-      { label: '출연 방송', href: '/events/broadcast', meta: '7', image: invite },
-      { label: '언론 보도', href: '/articles/press', meta: '74', image: podium },
-    ],
-  },
-  {
-    key: 'robots', label: 'Robots', en: 'ROBOTS · 로봇', href: '/robots/list',
-    desc: '휴머노이드부터 재난구조 로봇까지, 역대 개발 로봇의 제원과 사진입니다.',
-    items: [{ label: '로봇 목록', href: '/robots/list', meta: '57', image: tank1 }],
-  },
-  {
-    key: 'people', label: 'People', en: 'PEOPLE · 단원', href: '/members/roster',
-    desc: '1기부터 20기까지, 팀 사진과 주장, 인터뷰 영상을 기수별로 볼 수 있습니다.',
-    items: [
-      { label: '전체 명단', href: '/members/roster', meta: '20기', image: team },
-      { label: '20기', href: '/members/20th', meta: '2026', image: team19 },
-      { label: '19기', href: '/members/19th', meta: '2024', image: team19 },
-      { label: '18기', href: '/members/18th', meta: '2023', image: team18 },
+    title: 'PEOPLE & ROBOTS',
+    links: [
+      { no: '07', label: '로봇 목록', href: '/robots/list', count: '57', match: ['/robots/'] },
+      { no: '08', label: '전체 명단', href: '/members/roster', count: '20기', match: ['/members/'] },
+      { no: '09', label: 'Contact', href: '/contact/contact', match: ['/contact/'] },
     ],
   },
 ];
 
 export const contactHref = '/contact/contact';
+export const social = {
+  instagram: 'https://www.instagram.com/robit_korea_official',
+  youtube: 'https://www.youtube.com/@ROBIT_KOREA',
+  email: 'kwrobitcontact@gmail.com',
+};
+
+/** 현재 경로가 어느 사이드바 링크에 속하는지 구한다 (가장 긴 접두어가 이긴다). */
+export function currentLink(pathname: string): NavLink | undefined {
+  const p = pathname.replace(/\/$/, '') || '/';
+  let best: { link: NavLink; len: number } | undefined;
+  for (const g of groups)
+    for (const l of g.links)
+      for (const m of l.match) {
+        const hit = m === '/' ? p === '/' : p === m || p.startsWith(m.endsWith('/') ? m : m);
+        if (hit && (!best || m.length > best.len)) best = { link: l, len: m.length };
+      }
+  return best?.link;
+}
 
 /** 문서 경로(slug)로 소속 섹션과 경로 표기를 구한다. */
 export function sectionOf(slug: string) {

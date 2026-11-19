@@ -1,26 +1,12 @@
 ---
-import { sections, contactHref } from '../data/nav';
+import { social } from '../data/nav';
 ---
 
 <footer class="site">
-  <div class="wrap">
-    <div class="big">RO<b>:</b>BIT</div>
-    <div class="fcols">
-      <div class="fabout">
-        <p>광운대학교 로봇게임단 로빛(ROːBIT)<br />2006년 11월 1일 창단, 국내 최초 로봇 스포츠 게임단</p>
-      </div>
-      <nav class="flinks" aria-label="사이트 맵">
-        {sections.map((s) => <a href={s.href}>{s.label}</a>)}
-        <a href={contactHref}>Contact</a>
-      </nav>
-    </div>
-    <div class="cols">
-      <span>© ROːBIT · 광운대학교 로봇게임단</span>
-      <span>
-        <a href="https://www.instagram.com/robit_korea_official" target="_blank" rel="noopener">Instagram</a> ·
-        <a href="https://www.youtube.com/@ROBIT_KOREA" target="_blank" rel="noopener">YouTube</a> ·
-        <a href="mailto:kwrobitcontact@gmail.com">kwrobitcontact@gmail.com</a>
-      </span>
-    </div>
-  </div>
+  <span>© ROːBIT · 광운대학교 로봇게임단 · 2006.11.01 창단</span>
+  <span>
+    <a href={social.instagram} target="_blank" rel="noopener">Instagram</a>
+    <a href={social.youtube} target="_blank" rel="noopener">YouTube</a>
+    <a href={`mailto:${social.email}`}>{social.email}</a>
+  </span>
 </footer>
