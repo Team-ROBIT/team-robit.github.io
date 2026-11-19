@@ -26,14 +26,84 @@ sidebar: false
 - **결과**: 1위, 대상(산업통상부장관상)
 - Eclipse로 출전해 대상을 수상했습니다.
 
+### 시상
+
 ![2026 시상](../../../assets/assets_contest/defense-2026-award.webp "2026 국방로봇경진대회 대상(산업통상부장관상) 시상 — Eclipse와 함께")
+
+### 로봇
+
+![경기 중인 Eclipse](../../../assets/assets_contest/defense-robot-2026-robot-01.webp "경기 중인 Eclipse")
+
+![Eclipse, 경기장에서](../../../assets/assets_contest/defense-robot-2026-robot-02.webp "Eclipse, 경기장에서")
+
+![Eclipse 매니퓰레이터](../../../assets/assets_contest/defense-robot-2026-robot-03.webp "Eclipse 매니퓰레이터")
+
+### 개발 · 디버깅
+
+![LiDAR 지도를 RViz로 확인](../../../assets/assets_contest/defense-robot-2026-debug-01.webp "LiDAR 지도를 RViz로 확인")
+
+![비전 디버깅 창](../../../assets/assets_contest/defense-robot-2026-debug-02.webp "비전 디버깅 창")
+
+![디버깅하면서 고민 중](../../../assets/assets_contest/defense-robot-2026-debug-03.webp "디버깅하면서 고민 중")
+
+![로봇 전기 시스템 점검](../../../assets/assets_contest/defense-robot-2026-debug-04.webp "로봇 전기 시스템 점검")
+
+![매니퓰레이터 조종 디버깅](../../../assets/assets_contest/defense-robot-2026-debug-05.webp "매니퓰레이터 조종 디버깅")
+
+### 대회 현장
+
+![경기장의 Eclipse](../../../assets/assets_contest/defense-robot-2026-venue-03.webp "경기장의 Eclipse")
+
+![미션 수행 중](../../../assets/assets_contest/defense-robot-2026-venue-02.webp "미션 수행 중")
+
+![미션 수행 중](../../../assets/assets_contest/defense-robot-2026-venue-04.webp "미션 수행 중")
+
+![경기 준비](../../../assets/assets_contest/defense-robot-2026-venue-01.webp "경기 준비")
+
+![대회장에서 받은 상 2개](../../../assets/assets_contest/defense-robot-2026-venue-06.webp "대회장에서 받은 상 2개")
+
+### 팀과 함께
+
+![팀원들, 로봇과 함께](../../../assets/assets_contest/defense-robot-2026-venue-07.webp "팀원들, 로봇과 함께")
+
+![팀원들](../../../assets/assets_contest/defense-robot-2026-venue-08.webp "팀원들")
+
+![쉬는 시간](../../../assets/assets_contest/defense-robot-2026-venue-05.webp "쉬는 시간")
+
 
 ## 2025 시즌 · LUCO
 
 - **결과**: 1위, 최우수상(육군참모총장상)
 - 기존과 다른 모바일 베이스인 LUCO로 출전해 최우수상을 수상했습니다.
 
+### 시상
+
 ![2025 시상](../../../assets/assets_contest/defense-2025-award.webp "2025 국방로봇경진대회 시상 — 육군참모총장상, 인기상")
+
+### 로봇
+
+![LUCO](../../../assets/assets_contest/defense-robot-2025-robot-01.webp "LUCO")
+
+![연구실에서 테스트 중인 LUCO](../../../assets/assets_contest/defense-robot-2025-robot-02.webp "연구실에서 테스트 중인 LUCO")
+
+![LUCO 탑뷰 (미완성본)](../../../assets/assets_contest/defense-robot-2025-robot-03.webp "LUCO 탑뷰 (미완성본)")
+
+### 개발 · 디버깅
+
+![비전 시스템 디버깅](../../../assets/assets_contest/defense-robot-2025-debug-01.webp "비전 시스템 디버깅")
+
+![경기장 위의 LUCO](../../../assets/assets_contest/defense-robot-2025-debug-02.webp "경기장 위의 LUCO")
+
+![코드 수정하는 중](../../../assets/assets_contest/defense-robot-2025-debug-03.webp "코드 수정하는 중")
+
+### 대회 현장
+
+![경기장 위의 LUCO](../../../assets/assets_contest/defense-robot-2025-venue-01.webp "경기장 위의 LUCO")
+
+![경기장 위의 LUCO](../../../assets/assets_contest/defense-robot-2025-venue-02.webp "경기장 위의 LUCO")
+
+![경기장 위의 LUCO](../../../assets/assets_contest/defense-robot-2025-venue-03.webp "경기장 위의 LUCO")
+
 
 ## ROBOT
 

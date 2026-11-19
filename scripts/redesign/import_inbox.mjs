@@ -11,9 +11,9 @@ import sharp from 'sharp';
 
 const OUT = 'src/assets/assets_contest';
 const jobs = [
-  ['_inbox/defense-robot/수상사진_로봇과같이.jpg', 'defense-2026-award.webp', 1600],
-  ['_inbox/defense-robot/2025국방단체사진.jpg', 'defense-2025-award.webp', 1600],
-  ['_inbox/extreme-robot/극한단체사진.jpg', 'extreme-2025-award.webp', 1600],
+  ['_inbox/defense-robot/2026/award/수상사진_로봇과같이.jpg', 'defense-2026-award.webp', 1600],
+  ['_inbox/defense-robot/2025/award/2025국방단체사진.jpg', 'defense-2025-award.webp', 1600],
+  ['_inbox/extreme-robot/2025/award/극한단체사진.jpg', 'extreme-2025-award.webp', 1600],
   ['_inbox/irc-manipulator/발표사진.png', 'irc-2026-presentation.webp', 1280],
   ['_inbox/irc-manipulator/수상사진.png', 'irc-2026-award.webp', 960],
   ['_inbox/irc-manipulator/시연사진.png', 'irc-2026-demo.webp', 1280],
@@ -21,7 +21,7 @@ const jobs = [
 
 async function convert(from, to, width) {
   const animated = from.toLowerCase().endsWith('.gif');
-  const img = sharp(from, { animated, limitInputPixels: false });
+  const img = sharp(from, { animated, limitInputPixels: false }).rotate(); // EXIF 방향 보정
   const meta = await img.metadata();
   const w = animated ? Math.min(width, 720) : width;
   await (meta.width > w ? img.resize({ width: w }) : img).webp({ quality: animated ? 70 : 82 }).toFile(`${OUT}/${to}`);
@@ -42,7 +42,9 @@ for (const page of fs.readdirSync('_inbox', { withFileTypes: true }).filter((d) 
       const dir = path.join('_inbox', page.name, year.name, slot);
       if (!fs.existsSync(dir)) continue;
       const files = fs.readdirSync(dir).filter((f) => IMG.test(f)).sort();
+      const done = new Set(jobs.map((j) => path.basename(j[0])));
       for (let i = 0; i < files.length; i++) {
+        if (done.has(files[i])) continue; // 이름이 정해진 파일(jobs)은 위에서 처리
         const to = `${page.name}-${year.name}-${slot}-${String(i + 1).padStart(2, '0')}.webp`;
         if (!fs.existsSync(`${OUT}/${to}`)) await convert(path.join(dir, files[i]), to, slotWidth[slot]);
       }

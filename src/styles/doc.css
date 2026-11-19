@@ -67,3 +67,7 @@
 .doc .gallery.feature>p:first-child{grid-column:span 2;grid-row:span 2}
 .doc .gallery.feature>p:first-child img{height:100%;aspect-ratio:auto}
 @media(max-width:1000px){.doc .gallery.feature{grid-template-columns:repeat(2,1fr)}}
+.doc .gallery.n5{grid-template-columns:repeat(6,1fr)}
+.doc .gallery.n5>*{grid-column:span 2}
+.doc .gallery.n5>*:nth-child(n+4){grid-column:span 3}
+@media(max-width:700px){.doc .gallery.n5{grid-template-columns:repeat(2,1fr)}.doc .gallery.n5>*,.doc .gallery.n5>*:nth-child(n+4){grid-column:auto}}
