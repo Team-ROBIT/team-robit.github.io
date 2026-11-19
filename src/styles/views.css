@@ -50,3 +50,6 @@ a.cc:hover{transform:translateY(-8px)}a.cc:hover img{transform:scale(1.08)}a.cc:
 .cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:1.2em 0 0}
 .cc.cut{background:linear-gradient(135deg,#fff1ec,#ffd9c7)}.cc.cut::before,.cc.cut::after{display:none}.cc.cut img{object-fit:contain;padding:26px 26px 64px;filter:drop-shadow(0 18px 14px rgba(23,18,27,.35))}.cc.cut .ct{color:var(--ink)}
 .cc.bare::before{background:linear-gradient(0deg,rgba(23,18,27,.35),transparent 50%)}
+
+/* 팀장 배지 (주장보다 낮은 직책이라 어두운 색) */
+.mc .cap.ld{background:var(--ink);letter-spacing:.08em}

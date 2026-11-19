@@ -8,7 +8,8 @@ interface Member {
     name: string;
     label?: string; // 예: 18기(23)
     part?: string; // 예: Software Engineer
-    captain?: boolean;
+    captain?: boolean; // 주장
+    leader?: string; // 팀장 (연도, 예: "2026") — 주장 아래 직책
     github?: string;
     note?: string;
     photo?: ImageMetadata;
@@ -57,6 +58,7 @@ const years: Record<number, string> = { 1: '2006', 2: '2007', 3: '2008', 4: '200
             {group.members.map((m) => (
                 <div class="mc">
                     {m.captain && <span class="cap">CAPTAIN</span>}
+                    {m.leader && <span class="cap ld">TEAM LEADER · {m.leader}</span>}
                     {m.photo ? (
                         <div class="av"><Image src={m.photo} alt={m.name} width={192} height={192} loading="lazy" /></div>
                     ) : (

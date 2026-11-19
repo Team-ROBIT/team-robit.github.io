@@ -50,3 +50,20 @@
 /* 이미지에 링크를 건 문단(영상 썸네일 등) */
 .doc>p>a>img:only-child{display:block;width:100%;max-height:none;aspect-ratio:16/9;object-fit:cover;border-radius:18px;box-shadow:0 26px 40px -30px rgba(122,34,51,.5);transition:transform .5s}
 .doc>p>a:hover>img:only-child{transform:scale(1.01)}
+
+/* 이미지 캡션(figure) 과 "대회 현장" 큰 사진 배치 */
+.doc>figure{margin-top:1.4em}
+.doc>figure>p{line-height:0}
+.doc>figure>p>img{display:block;max-height:560px;width:auto;max-width:100%;margin:0 auto;border-radius:18px;box-shadow:0 26px 40px -30px rgba(122,34,51,.5)}
+.doc figcaption{font-size:13px;line-height:1.6;color:var(--mute);text-align:center;padding:10px 6px 0}
+.doc .gallery>figure{margin:0}
+.doc .gallery>figure>p{margin:0;line-height:0;overflow:hidden;border-radius:16px}
+.doc .gallery>figure>p img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.doc .gallery>figure:hover>p img{transform:scale(1.06)}
+.doc .gallery.feature{grid-template-columns:repeat(4,1fr)}
+.doc .gallery.feature>figure:first-child{grid-column:span 2;grid-row:span 2}
+.doc .gallery.feature>figure:first-child>p,.doc .gallery.feature>figure:first-child>p img{height:100%}
+.doc .gallery.feature>figure:first-child>p img{aspect-ratio:auto}
+.doc .gallery.feature>p:first-child{grid-column:span 2;grid-row:span 2}
+.doc .gallery.feature>p:first-child img{height:100%;aspect-ratio:auto}
+@media(max-width:1000px){.doc .gallery.feature{grid-template-columns:repeat(2,1fr)}}
