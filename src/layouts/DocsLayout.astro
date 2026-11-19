@@ -1,5 +1,5 @@
 ---
-// 하위 페이지 공통 레이아웃: 페이지 헤더 + (h2가 둘 이상이면) 고정 탭 + 본문
+// 하위 페이지 공통 레이아웃: 제목 카드 + 본문 + 오른쪽 "ON THIS PAGE" 목차
 import type { ImageMetadata } from 'astro';
 import BaseLayout from './BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
@@ -8,7 +8,6 @@ interface Props {
   title: string;
   description?: string;
   kicker?: string;
-  crumb?: string;
   subtitle?: string;
   chips?: string[];
   highlight?: string;
@@ -20,22 +19,24 @@ interface Props {
   wide?: boolean;
   tabs?: { href: string; label: string }[];
 }
-const { title, description, kicker, crumb, subtitle, chips, highlight, cover, coverKind, headings = [], bare = false, wide = false } = Astro.props;
-const tabs =
+const { title, description, kicker, subtitle, chips, highlight, cover, coverKind, headings = [], bare = false, wide = false } = Astro.props;
+const toc =
   Astro.props.tabs ??
   headings.filter((h) => h.depth === 2).map((h) => ({ href: `#${h.slug}`, label: h.text }));
+const showToc = toc.length >= 2;
 ---
 
 <BaseLayout title={title} description={description}>
-  <PageHeader {kicker} {crumb} {title} {subtitle} {chips} {highlight} {cover} {coverKind} />
-  {tabs.length >= 2 && (
-    <div class="tabs">
-      <div class="wrap">
-        {tabs.map((t, i) => <a class={i === 0 ? 'on' : ''} href={t.href}>{t.label}</a>)}
-      </div>
+  <div class:list={['dl', !showToc && 'notoc', (wide || bare) && 'wide']}>
+    <div class="dl-main">
+      <PageHeader {kicker} {title} {subtitle} {chips} {highlight} {cover} {coverKind} />
+      {bare ? <slot /> : <article class="doc"><slot /></article>}
     </div>
-  )}
-  <div class:list={['page', (wide || bare) && 'wide']}>
-    {bare ? <slot /> : <article class="doc"><slot /></article>}
+    {showToc && (
+      <aside class="toc" aria-label="이 페이지의 목차">
+        <p>ON THIS PAGE</p>
+        {toc.map((t, i) => <a class={i === 0 ? 'on' : ''} href={t.href}>{t.label}</a>)}
+      </aside>
+    )}
   </div>
 </BaseLayout>

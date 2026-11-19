@@ -1,0 +1,59 @@
+---
+// 왼쪽 사이드바(설계도 레이아웃): 로고 · 검색 · 그룹별 메뉴 · 갱신 표기. 좁은 화면에서는 서랍으로 열린다.
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import logo from '../assets/robit_logo_kw_circle.png';
+import { groups, currentLink, sectionOf } from '../data/nav';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const cur = currentLink(path);
+
+// 검색 색인: 모든 문서의 제목 · 부제 · 설명
+const docs = await getCollection('archive');
+const index = docs.map((d) => ({
+  t: d.data.title,
+  s: d.data.subtitle ?? '',
+  d: d.data.description ?? '',
+  k: sectionOf(d.slug).kicker,
+  u: `/${d.slug}`,
+}));
+---
+
+<aside class="nav" id="nav" aria-label="사이트 메뉴">
+  <a class="brand" href="/" aria-label="ROːBIT Archive 홈">
+    <Image src={logo} alt="" width={68} height={68} loading="eager" />
+    <div>RO:BIT <span>Archive</span></div>
+  </a>
+  <button class="srch" id="srch" type="button" aria-label="검색 열기">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.7"></circle><path d="m11 11 3.2 3.2"></path></svg>
+    검색<kbd>Ctrl K</kbd>
+  </button>
+  {groups.map((g) => (
+    <div class="grp">
+      <small>{g.title}</small>
+      {g.links.map((l) => {
+        const on = cur === l;
+        return (
+          <>
+            <a href={l.href} class={on && path === l.href ? 'cur' : on ? 'cur' : ''} aria-current={on && path === l.href ? 'page' : undefined}>
+              <i>{l.no}</i>{l.label}{l.count && <em>{l.count}</em>}
+            </a>
+            {on && l.sub && l.sub.map((s) => (
+              <a class={['sub', path === s.href && 'cur'].filter(Boolean).join(' ')} href={s.href}>{s.label}</a>
+            ))}
+          </>
+        );
+      })}
+    </div>
+  ))}
+  <div class="side-foot">LAST UPDATE <b>2026.11</b><br />© ROːBIT · 광운대학교<br />로봇게임단</div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<div class="sbox" id="sbox" role="dialog" aria-modal="true" aria-label="검색" hidden>
+  <div class="sp">
+    <input id="sq" type="search" placeholder="페이지 검색 (예: 국방, 휴머노이드, 19기)" autocomplete="off" />
+    <ul id="sr"></ul>
+  </div>
+</div>
+<script type="application/json" id="search-data" set:html={JSON.stringify(index)} />

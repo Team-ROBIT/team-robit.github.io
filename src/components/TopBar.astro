@@ -1,0 +1,25 @@
+---
+// 본문 위쪽 고정 바: 경로 표기 + 보조 링크. 좁은 화면에서는 메뉴 버튼이 나타난다.
+import { social } from '../data/nav';
+
+const parts = Astro.url.pathname.split('/').filter(Boolean);
+const home = parts.length === 0;
+const last = parts.pop();
+---
+
+<div class="bar">
+  <button class="burger" id="burger" type="button" aria-label="메뉴 열기" aria-expanded="false"><i></i><i></i><i></i></button>
+  <div class="crumb">
+    archive /{parts.map((p) => <> {p} /</>)} <b>{home ? 'home' : last}</b>
+  </div>
+  <div class="r">
+    {home ? (
+      <>
+        <a href={social.instagram} target="_blank" rel="noopener">Instagram</a>
+        <a href={social.youtube} target="_blank" rel="noopener">YouTube</a>
+      </>
+    ) : (
+      <button type="button" id="copylink">링크 복사</button>
+    )}
+  </div>
+</div>
