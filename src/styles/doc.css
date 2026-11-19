@@ -69,3 +69,14 @@
 .doc .gallery.n5>*{grid-column:span 2}
 .doc .gallery.n5>*:nth-child(n+4){grid-column:span 3}
 @media(max-width:700px){.doc .gallery.n5{grid-template-columns:repeat(2,1fr)}.doc .gallery.n5>*,.doc .gallery.n5>*:nth-child(n+4){grid-column:auto}}
+
+/* 설명이 달린 카드 갤러리 (센서·부품 소개 등): 흰 배경 사진 + 제목/설명 */
+.doc .gallery.cards{grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+.doc .gallery.cards>figure{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .35s,box-shadow .35s}
+.doc .gallery.cards>figure:hover{transform:translateY(-5px);box-shadow:0 22px 34px -24px rgba(20,22,26,.45)}
+.doc .gallery.cards>figure>p{border-radius:0;background:#fff}
+.doc .gallery.cards>figure>p img{aspect-ratio:1;object-fit:contain;padding:22px;border-radius:0;background:#fff}
+.doc .gallery.cards>figure:hover>p img{transform:scale(1.04)}
+.doc .gallery.cards figcaption{text-align:left;border-top:1px solid var(--line);padding:16px 18px 20px;font-size:13.5px;line-height:1.7;color:var(--mute);flex:1}
+.doc .gallery.cards figcaption b{display:block;font-size:15.5px;color:var(--ink);margin-bottom:6px;letter-spacing:-.02em}
+@media(max-width:700px){.doc .gallery.cards{grid-template-columns:1fr}}

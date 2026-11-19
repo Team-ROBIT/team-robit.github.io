@@ -149,3 +149,104 @@ if (curGen) {
   const strip = curGen.parentElement;
   strip.scrollLeft = curGen.offsetLeft - strip.clientWidth / 2 + curGen.clientWidth / 2;
 }
+
+// 사진 확대(라이트박스): 본문·갤러리·로봇·수상·행사 사진을 누르면 화면 가운데에 크게 띄운다.
+//   닫기: ESC, 사진 바깥 클릭, 닫기 버튼 / 넘기기: ← → 또는 좌우 버튼
+(function lightbox() {
+  const SEL = '.doc img, .yr .body img, .mos img, .rc img, .team .tp img, .capbox img, .evl img';
+  const isZoomable = (img) => !img.closest('a, .title, .hc, .cc, .brand, aside, .gens') && img.naturalWidth !== 1;
+  const items = [...document.querySelectorAll(SEL)].filter(isZoomable);
+  if (!items.length) return;
+
+  const lb = document.createElement('div');
+  lb.className = 'lb';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-modal', 'true');
+  lb.setAttribute('aria-label', '사진 확대');
+  lb.innerHTML =
+    '<button class="lbx" type="button" aria-label="닫기">✕</button>' +
+    '<button class="lbn prev" type="button" aria-label="이전 사진">‹</button>' +
+    '<button class="lbn next" type="button" aria-label="다음 사진">›</button>' +
+    '<figure><img alt="" /><figcaption></figcaption></figure><div class="lbc"></div>';
+  document.body.appendChild(lb);
+  const big = lb.querySelector('img');
+  const cap = lb.querySelector('figcaption');
+  const count = lb.querySelector('.lbc');
+  let group = [];
+  let idx = 0;
+  let opener = null;
+
+  // srcset 이 있으면 가장 큰 파일을 쓴다.
+  function bestSrc(img) {
+    const ss = img.getAttribute('srcset');
+    if (!ss) return img.currentSrc || img.src;
+    const c = ss.split(',').map((s) => s.trim().split(/\s+/)).map(([u, w]) => ({ u, w: parseInt(w) || 0 })).sort((a, b) => b.w - a.w);
+    return c[0]?.u || img.src;
+  }
+  // 캡션: 제목/설명 꼴(<b>·<span>)이면 두 줄로, 아니면 글자 그대로
+  function captionOf(img) {
+    const fc = img.closest('figure')?.querySelector('figcaption');
+    const b = fc?.querySelector('b');
+    const d = fc?.querySelector('span');
+    if (b && d) return { head: b.textContent.trim(), text: d.textContent.trim() };
+    const t = (fc?.textContent || img.alt || '').trim();
+    return { head: '', text: t.length > 1 ? t : '' };
+  }
+  function groupOf(img) {
+    const box = img.closest('.gallery, .mos, .cut, .rb, .rg, .evl .e, .team, .doc') || document.body;
+    return items.filter((x) => box.contains(x));
+  }
+  function show(i, animate) {
+    idx = (i + group.length) % group.length;
+    const img = group[idx];
+    if (animate) lb.classList.add('swap');
+    const next = new Image();
+    next.onload = next.onerror = () => {
+      big.src = next.src;
+      big.alt = img.alt || '';
+      const c = captionOf(img);
+      cap.replaceChildren();
+      if (c.head) { const h = document.createElement('b'); h.textContent = c.head; cap.append(h); }
+      if (c.text) cap.append(document.createTextNode(c.text));
+      cap.style.display = c.head || c.text ? '' : 'none';
+      count.textContent = group.length > 1 ? `${idx + 1} / ${group.length}` : '';
+      lb.classList.toggle('single', group.length < 2);
+      requestAnimationFrame(() => lb.classList.remove('swap'));
+    };
+    next.src = bestSrc(img);
+  }
+  function open(img) {
+    opener = img;
+    group = groupOf(img);
+    show(group.indexOf(img), false);
+    lb.classList.add('on');
+    document.body.style.overflow = 'hidden';
+    lb.querySelector('.lbx').focus({ preventScroll: true });
+  }
+  function close() {
+    if (!lb.classList.contains('on')) return;
+    lb.classList.remove('on');
+    document.body.style.overflow = '';
+    opener?.focus?.({ preventScroll: true });
+  }
+
+  items.forEach((img) => {
+    img.classList.add('zoomable');
+    img.tabIndex = 0;
+    img.setAttribute('role', 'button');
+    img.addEventListener('click', () => open(img));
+    img.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); } });
+  });
+  // 사진·버튼이 아닌 곳(배경)을 누르면 닫는다.
+  lb.addEventListener('click', (e) => {
+    if (e.target.closest('.lbn')) { show(idx + (e.target.closest('.next') ? 1 : -1), true); return; }
+    if (e.target === big || e.target.closest('figcaption')) return;
+    close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('on')) return;
+    if (e.key === 'Escape') { e.stopImmediatePropagation(); close(); }
+    else if (e.key === 'ArrowRight' && group.length > 1) show(idx + 1, true);
+    else if (e.key === 'ArrowLeft' && group.length > 1) show(idx - 1, true);
+  }, true);
+})();

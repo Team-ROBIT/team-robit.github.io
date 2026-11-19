@@ -4,6 +4,7 @@
 @import "./theme.css";
 @import "./doc.css";
 @import "./views.css";
+@import "./lightbox.css";
 
 @theme {
     /* 로고에서 추출한 브랜드 컬러 */

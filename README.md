@@ -100,11 +100,15 @@ python scripts/backup/extract.py convert    # Markdown 변환 + 이미지 다운
 node scripts/backup/optimize.mjs            # 이미지 WebP 최적화
 python scripts/backup/verify.py             # 원본 대비 누락 검사 (텍스트·이미지·링크)
 python scripts/redesign/check_links.py      # 빌드 결과의 내부 링크 검사 (build 후)
+node scripts/redesign/import_inbox.mjs      # _inbox 사진을 WebP 로 변환해 src/assets 로
+node scripts/redesign/compress_images.mjs   # src/assets 의 큰 WebP 재압축 (사진 1600px, 움직이는 이미지 480px)
+node scripts/redesign/thin_animations.mjs   # 1.2MB 이상 움직이는 WebP 의 프레임을 절반으로
 ```
 
 ---
 
 ## 인수인계 유의사항
+- **새 이미지**: 추가한 사진·gif 는 위의 압축 도구를 한 번 돌린 뒤 커밋하세요. (캡션은 `![설명](경로 "캡션")`, 센서 같은 부품은 `"제목 | 설명"` 꼴로 쓰면 카드로 나옵니다.)
 - **일관성**: 색상·여백은 `src/styles/theme.css` 의 CSS 변수(`:root`)를 사용하세요.
 - **문서화**: 새 기능을 추가하면 이 README 의 '유지보수 가이드'를 갱신해 주세요.
 - **문의**: 초기 제작자 - 19기 지능팀 박기홍 (Kinesis Akashic)

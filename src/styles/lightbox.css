@@ -1,0 +1,20 @@
+/* 사진 확대(라이트박스) */
+.zoomable{cursor:zoom-in}
+.zoomable:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.lb{position:fixed;inset:0;z-index:600;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:5vh 5vw;background:rgba(14,10,14,.84);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s linear .35s}
+.lb.on{opacity:1;visibility:visible;transition:opacity .35s ease,visibility 0s}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;max-width:100%;transform:translateY(18px) scale(.9);opacity:0;transition:transform .5s cubic-bezier(.2,.9,.25,1.04),opacity .4s ease}
+.lb.on figure{transform:none;opacity:1}
+.lb.swap figure{opacity:0;transform:scale(.97);transition-duration:.18s}
+.lb img{display:block;max-width:90vw;max-height:78vh;width:auto;height:auto;object-fit:contain;border-radius:12px;background:#fff;box-shadow:0 50px 100px -30px rgba(0,0,0,.85);cursor:default}
+.lb figcaption{max-width:min(72ch,90vw);color:#e9e3e6;font-size:14px;line-height:1.7;text-align:center}
+.lb figcaption b{display:block;font-size:16px;color:#fff;margin-bottom:4px}
+.lbc{position:absolute;left:0;right:0;bottom:18px;text-align:center;font:500 12px var(--mono);letter-spacing:.12em;color:#b9aeb3}
+.lbx,.lbn{position:absolute;border:0;color:#fff;background:rgba(255,255,255,.12);cursor:pointer;display:grid;place-items:center;transition:background .25s,transform .25s}
+.lbx:hover,.lbn:hover{background:rgba(255,255,255,.26)}
+.lbx{top:18px;right:18px;width:44px;height:44px;border-radius:50%;font-size:18px}
+.lbn{top:50%;width:48px;height:48px;margin-top:-24px;border-radius:50%;font-size:30px;line-height:1;padding-bottom:4px}
+.lbn.prev{left:18px}.lbn.next{right:18px}.lbn:hover{transform:scale(1.08)}
+.lb.single .lbn{display:none}
+@media(max-width:700px){.lbn{top:auto;bottom:14px;margin-top:0}.lbn.prev{left:14px}.lbn.next{right:14px}.lb img{max-height:70vh}}
+@media (prefers-reduced-motion: reduce){.lb,.lb figure{transition:none!important;transform:none!important}}

@@ -2,7 +2,8 @@
 //  1) 연속된 "이미지 한 장짜리 문단"은 하나의 갤러리(<div class="gallery">)로 묶인다.
 //  2) 직전 제목에 "현장"이 들어 있고 사진이 5장·9장(=큰 사진 1 + 4의 배수)이면 첫 사진을 크게 보여 준다 (class="gallery feature").
 //     5장이면("현장"이 아닐 때) 윗줄 3장 + 아랫줄 2장으로 맞춘다 (class="gallery n5").
-//  3) 이미지에 title 을 달면 캡션이 된다:  ![대체 텍스트](경로 "캡션 문장")
+//  3) 이미지 title 이 모두 "제목 | 설명" 꼴이면 설명이 달린 카드 갤러리(class="gallery cards")로 만든다.
+//  4) 이미지에 title 을 달면 캡션이 된다:  ![대체 텍스트](경로 "캡션 문장")
 const isImageOnlyParagraph = (node) =>
   node.type === 'paragraph' &&
   node.children.length > 0 &&
@@ -16,7 +17,9 @@ const caption = (p) => p.children.find((c) => c.type === 'image')?.title ?? '';
 function figure(p) {
   const cap = caption(p);
   if (!cap) return [p];
-  return [{ type: 'html', value: '<figure>' }, p, { type: 'html', value: `<figcaption>${esc(cap)}</figcaption></figure>` }];
+  const [head, ...rest] = cap.split('|').map((x) => x.trim());
+  const html = rest.length ? `<b>${esc(head)}</b><span>${esc(rest.join(' | '))}</span>` : esc(cap);
+  return [{ type: 'html', value: '<figure>' }, p, { type: 'html', value: `<figcaption>${html}</figcaption></figure>` }];
 }
 
 export default function remarkGallery() {
@@ -34,7 +37,8 @@ export default function remarkGallery() {
         if (j - i >= 2) {
           const n = j - i;
           const feature = /현장/.test(heading) && n >= 5 && (n - 1) % 4 === 0;
-          out.push({ type: 'html', value: `<div class="gallery${feature ? ' feature' : n === 5 ? ' n5' : ''}">` });
+          const cards = nodes.slice(i, j).every((p) => caption(p).includes('|'));
+          out.push({ type: 'html', value: `<div class="gallery${cards ? ' cards' : feature ? ' feature' : n === 5 ? ' n5' : ''}">` });
           for (const p of nodes.slice(i, j)) out.push(...figure(p));
           out.push({ type: 'html', value: '</div>' });
         } else {
